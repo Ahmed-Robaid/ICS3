@@ -13,14 +13,15 @@ of nodes which can be helpful for testing monitoring software.
 # --------------------------------------------------------------------------- # 
 # import the various server implementations
 # --------------------------------------------------------------------------- # 
-from pymodbus.server.async import StartTcpServer
-from pymodbus.server.async import StartUdpServer
-from pymodbus.server.async import StartSerialServer
+from pymodbus.server.async_io import StartTcpServer
+from pymodbus.server.async_io import StartUdpServer
+from pymodbus.server.async_io import StartSerialServer
 
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusSlaveContext, ModbusServerContext
 from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
+from pymodbus import __version__ as vr
 
 # --------------------------------------------------------------------------- # 
 # configure the service logging
@@ -50,7 +51,7 @@ def run_async_server():
     identity_feed1.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity_feed1.ProductName = 'Pymodbus Server'
     identity_feed1.ModelName = 'Pymodbus Server'
-    identity_feed1.MajorMinorRevision = '1.0'
+    identity_feed1.MajorMinorRevision = vr
     
      
       
