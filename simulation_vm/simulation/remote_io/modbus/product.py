@@ -19,12 +19,13 @@ import json
 # --------------------------------------------------------------------------- #
 # import the modbus libraries we need
 # --------------------------------------------------------------------------- #
-from pymodbus.server.async import StartTcpServer
+from pymodbus.server.async_io import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusServerContext, ModbusSlaveContext
 from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
 import random
+from pymodbus import __version__ as vr
 
 # --------------------------------------------------------------------------- #
 # import the twisted libraries we need
@@ -39,7 +40,7 @@ from twisted.internet.task import LoopingCall
 last_command = -1
 def updating_writer(a):
     global last_command
-    print 'updating'
+    print('updating')
     context  = a[0]
     
     slave_id = 0x01 # slave address
@@ -53,7 +54,7 @@ def updating_writer(a):
     data = json.loads(s.recv(1500))
     valve_pos = int(data["state"]["product_valve_pos"]/100.0*65535)
     flow = int(data["outputs"]["product_flow"]/500.0*65535)
-    print data
+    print(data)
     if valve_pos > 65535:
         valve_pos = 65535
     elif valve_pos < 0:
@@ -90,7 +91,7 @@ def run_update_server():
     identity.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity.ProductName = 'pymodbus Server'
     identity.ModelName = 'pymodbus Server'
-    identity.MajorMinorRevision = '1.0'
+    identity.MajorMinorRevision = vr
 
     # connect to simulation
     HOST = '127.0.0.1'
