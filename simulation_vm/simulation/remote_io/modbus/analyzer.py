@@ -18,12 +18,13 @@ import json
 # --------------------------------------------------------------------------- #
 # import the modbus libraries we need
 # --------------------------------------------------------------------------- #
-from pymodbus.server.async import StartTcpServer
+from pymodbus.server.async_io import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusServerContext, ModbusSlaveContext
 from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
 import random
+from pymodbus import __version__ as vr
 
 # --------------------------------------------------------------------------- #
 # import the twisted libraries we need
@@ -44,7 +45,7 @@ log.setLevel(logging.DEBUG)
 
 
 def updating_writer(a):
-    print 'updating'
+    print('updating')
     context  = a[0]
     readfunction = 0x03 # read holding registers
     writefunction = 0x10
@@ -57,7 +58,7 @@ def updating_writer(a):
     a_in_purge = int(data["outputs"]["A_in_purge"]*65535)
     b_in_purge = int(data["outputs"]["B_in_purge"]*65535)
     c_in_purge = int(data["outputs"]["C_in_purge"]*65535)
-    print data
+    print(data)
 
     # import pdb; pdb.set_trace()
     context[slave_id].setValues(4, 1, [a_in_purge,b_in_purge,c_in_purge])
@@ -88,7 +89,7 @@ def run_update_server():
     identity.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity.ProductName = 'pymodbus Server'
     identity.ModelName = 'pymodbus Server'
-    identity.MajorMinorRevision = '1.0'
+    identity.MajorMinorRevision = vr
 
     # connect to simulation
     HOST = '127.0.0.1'
