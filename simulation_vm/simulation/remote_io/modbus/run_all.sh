@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sim_path=/home/sim/ICS/simulation_vm/simulation/remote_io/modbus
+sim_path=/home/ics/ICS/simulation_vm/simulation/remote_io/modbus
 sudo pkill python3
 sudo python3 $sim_path/feed1.py &
 sudo python3 $sim_path/feed2.py &
