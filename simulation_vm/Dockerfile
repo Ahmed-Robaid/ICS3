@@ -2,7 +2,8 @@ FROM ubuntu:22.04
 
 #Update repos and install packages
 RUN apt-get update
-RUN apt-get install -y libjsoncpp-dev liblapacke-dev python3-pymodbus build-essential apache2 php libapache2-mod-php
+RUN pip3 install pymodbus
+RUN apt-get install -y libjsoncpp-dev liblapacke-dev build-essential apache2 php libapache2-mod-php
 RUN apt-get install -y sudo
 
 #Build the app
