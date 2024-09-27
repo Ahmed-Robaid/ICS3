@@ -1,10 +1,12 @@
 import socket
 import json
 import asyncio
-from pymodbus.server.async_io import StartTcpServer
+from pymodbus.server import StartAsyncTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock, ModbusServerContext, ModbusSlaveContext
 from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
+
+from pymodbus import __version__ as pymodbus_version
 
 # --------------------------------------------------------------------------- #
 # define your callback process
@@ -51,7 +53,7 @@ async def run_update_server():
     )
 
     context = ModbusServerContext(slaves=store, single=True)
-
+    #args[context]
     # ----------------------------------------------------------------------- #
     # initialize the server information
     # ----------------------------------------------------------------------- #
@@ -61,7 +63,7 @@ async def run_update_server():
     identity.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity.ProductName = 'pymodbus Server'
     identity.ModelName = 'pymodbus Server'
-    identity.MajorMinorRevision = '1.0'
+    identity.MajorMinorRevision = pymodbus_version
 
     # connect to simulation
     HOST = '127.0.0.1'
@@ -75,7 +77,7 @@ async def run_update_server():
     time = 1  # 1 second delay
     loop = asyncio.get_event_loop()
     loop.call_later(time, asyncio.create_task, updating_writer(context, sock))
-    await StartTcpServer(context, identity=identity, address=("192.168.95.10", 502))
+    await StartAsyncTcpServer(context=context, identity=identity, address=("192.168.168.120", 502))
 
 if __name__ == "__main__":
     asyncio.run(run_update_server())

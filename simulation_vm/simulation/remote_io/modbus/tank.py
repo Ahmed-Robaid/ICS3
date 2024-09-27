@@ -16,17 +16,16 @@ This can also be done with a python thread::
 # TODO maybe cut down on calls to simulation by combining all remote io into one file?
 import socket
 import json
+import asyncio
 # --------------------------------------------------------------------------- #
 # import the modbus libraries we need
 # --------------------------------------------------------------------------- #
-from pymodbus.server.async_io import StartTcpServer
+from pymodbus.server import StartAsyncTcpServer
 from pymodbus.device import ModbusDeviceIdentification
-from pymodbus.datastore import ModbusSequentialDataBlock
-from pymodbus.datastore import ModbusServerContext, ModbusSlaveContext
+from pymodbus.datastore import ModbusSequentialDataBlock, ModbusServerContext, ModbusSlaveContext
 from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
+from pymodbus import __version__ as pymodbus_version
 import random
-from pymodbus import __version__ as vr
-
 # --------------------------------------------------------------------------- #
 # import the twisted libraries we need
 # --------------------------------------------------------------------------- #
@@ -45,17 +44,15 @@ log.setLevel(logging.DEBUG)
 # --------------------------------------------------------------------------- #
 
 
-def updating_writer(a):
+async def updating_writer(context, sock):
     print('updating')
-    context  = a[0]
     readfunction = 0x03 # read holding registers
     writefunction = 0x10
     slave_id = 0x01 # slave address
     count = 50
-    s = a[1]
     # import pdb; pdb.set_trace()
-    s.send('{"request":"read"}')
-    data = json.loads(s.recv(1500))
+    sock.send(b'{"request":"read"}')
+    data = json.loads(sock.recv(1500))
     pressure = int(data["outputs"]["pressure"]/3200.0*65535)
     level = int(data["outputs"]["liquid_level"]/100.0*65535)
     if pressure > 65535:
@@ -68,9 +65,10 @@ def updating_writer(a):
     context[slave_id].setValues(4, 1, [pressure,level])
     values = context[slave_id].getValues(readfunction, 0, 2)
     log.debug("Values from datastore: " + str(values))
+    await asyncio.sleep(1)  # 1 second delay
 
 
-def run_update_server():
+async def run_update_server():
     # ----------------------------------------------------------------------- #
     # initialize your data store
     # ----------------------------------------------------------------------- #
@@ -93,7 +91,7 @@ def run_update_server():
     identity.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity.ProductName = 'pymodbus Server'
     identity.ModelName = 'pymodbus Server'
-    identity.MajorMinorRevision = vr
+    identity.MajorMinorRevision = pymodbus_version
 
     # connect to simulation
     HOST = '127.0.0.1'
@@ -103,11 +101,9 @@ def run_update_server():
     # ----------------------------------------------------------------------- #
     # run the server you want
     # ----------------------------------------------------------------------- #
-    time = 1  # 5 seconds delay
-    loop = LoopingCall(f=updating_writer, a=(context,sock))
-    loop.start(time, now=False)  # initially delay by time
-    StartTcpServer(context, identity=identity, address=("192.168.95.14", 502))
+    asyncio.create_task(updating_writer(context, sock))
+    await StartAsyncTcpServer(context=context, identity=identity, address=("192.168.95.14", 502))
 
 
 if __name__ == "__main__":
-    run_update_server()
+    asyncio.run(run_update_server())

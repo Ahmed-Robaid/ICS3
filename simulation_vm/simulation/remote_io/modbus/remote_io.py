@@ -9,19 +9,18 @@ of nodes which can be helpful for testing monitoring software.
 """
 
 
-
+import asyncio
 # --------------------------------------------------------------------------- # 
 # import the various server implementations
 # --------------------------------------------------------------------------- # 
-from pymodbus.server.async_io import StartTcpServer
-from pymodbus.server.async_io import StartUdpServer
-from pymodbus.server.async_io import StartSerialServer
-
+from pymodbus.server import StartAsyncTcpServer
+from pymodbus.server import StartAsyncUdpServer
+from pymodbus.server import StartAsyncSerialServer
 from pymodbus.device import ModbusDeviceIdentification
-from pymodbus.datastore import ModbusSequentialDataBlock
-from pymodbus.datastore import ModbusSlaveContext, ModbusServerContext
+from pymodbus.datastore import ModbusSequentialDataBlock, ModbusServerContext, ModbusSlaveContext
 from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
-from pymodbus import __version__ as vr
+from pymodbus import __version__ as pymodbus_version
+
 
 # --------------------------------------------------------------------------- # 
 # configure the service logging
@@ -32,7 +31,7 @@ log = logging.getLogger()
 log.setLevel(logging.DEBUG)
 
 
-def run_async_server():
+async def run_async_server():
     store_feed1 = ModbusSlaveContext(
         di=ModbusSequentialDataBlock(0, [17]*100),
         co=ModbusSequentialDataBlock(0, [17]*100),
@@ -51,7 +50,7 @@ def run_async_server():
     identity_feed1.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity_feed1.ProductName = 'Pymodbus Server'
     identity_feed1.ModelName = 'Pymodbus Server'
-    identity_feed1.MajorMinorRevision = vr
+    identity_feed1.MajorMinorRevision = pymodbus_version
     
      
       
@@ -59,8 +58,8 @@ def run_async_server():
     # run the server you want
     # ----------------------------------------------------------------------- # 
     
-    StartTcpServer(context_feed1, identity=identity_feed1, address=("192.168.95.10", 502))
+    await StartAsyncTcpServer(context=context_feed1, identity=identity_feed1, address=("192.168.95.10", 502))
 
 
 if __name__ == "__main__":
-    run_async_server()
+    asyncio.run(run_async_server())
