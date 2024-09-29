@@ -15,34 +15,48 @@ This can also be done with a python thread::
 """
 import socket
 import json
-import asyncio
-
 # --------------------------------------------------------------------------- #
 # import the modbus libraries we need
 # --------------------------------------------------------------------------- #
-from pymodbus.server import StartAsyncTcpServer
+from pymodbus.server.asynchronous import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
-from pymodbus.datastore import ModbusSequentialDataBlock, ModbusServerContext, ModbusSlaveContext
+from pymodbus.datastore import ModbusSequentialDataBlock
+from pymodbus.datastore import ModbusServerContext, ModbusSlaveContext
 from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
-from pymodbus import __version__ as pymodbus_version
+import random
+from pymodbus.version import version
+
+# --------------------------------------------------------------------------- #
+# import the twisted libraries we need
+# --------------------------------------------------------------------------- #
+from twisted.internet.task import LoopingCall
+
+
+
+# --------------------------------------------------------------------------- #
+# define your callback process
+# --------------------------------------------------------------------------- #
 
 last_command = -1
-
-
-async def updating_writer(context, sock):
+def updating_writer(a):
     global last_command
     print('updating')
+    context  = a[0]
 
-    slave_id = 0x01  # slave address
+    slave_id = 0x01 # slave address
     count = 50
+    s = a[1]
 
-    current_command = context[slave_id].getValues(16, 1, 1)[0] / 65535.0 * 100.0
+    current_command = context[slave_id].getValues(16, 1, 1)[0] / 65535.0*100.0
 
-    sock.sendall(b'{"request":"write","data":{"inputs":{"f1_valve_sp":' + repr(current_command).encode() + b'}}}\n')
+    s.sendall(b'{"request":"write","data":{"inputs":{"f1_valve_sp":' + repr(current_command).encode()+ b'}}}\n')
+   # sock.sendall(b'{"request":"write","data":{"inputs":{"f2_valve_sp":' + repr(current_command).encode() + b'}}}\n')
 
-    data = json.loads(sock.recv(1500))
-    valve_pos = int(data["state"]["f1_valve_pos"] / 100.0 * 65535)
-    flow = int(data["outputs"]["f1_flow"] / 500.0 * 65535)
+    # import pdb; pdb.set_trace()
+    #s.send('{"request":"read"}')
+    data = json.loads(s.recv(1500))
+    valve_pos = int(data["state"]["f1_valve_pos"]/100.0*65535)
+    flow = int(data["outputs"]["f1_flow"]/500.0*65535)
     print(data)
     if valve_pos > 65535:
         valve_pos = 65535
@@ -52,12 +66,12 @@ async def updating_writer(context, sock):
         flow = 65535
     elif flow < 0:
         flow = 0
+    # import pdb; pdb.set_trace()
+    context[slave_id].setValues(4, 1, [valve_pos,flow])
 
-    context[slave_id].setValues(4, 1, [valve_pos, flow])
-    await asyncio.sleep(1)  # 1 second delay
 
 
-async def run_update_server():
+def run_update_server():
     # ----------------------------------------------------------------------- #
     # initialize your data store
     # ----------------------------------------------------------------------- #
@@ -80,7 +94,7 @@ async def run_update_server():
     identity.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity.ProductName = 'pymodbus Server'
     identity.ModelName = 'pymodbus Server'
-    identity.MajorMinorRevision = pymodbus_version
+    identity.MajorMinorRevision = version
 
     # connect to simulation
     HOST = '127.0.0.1'
@@ -90,14 +104,11 @@ async def run_update_server():
     # ----------------------------------------------------------------------- #
     # run the server you want
     # ----------------------------------------------------------------------- #
-    #time = 1  # 5 seconds delay
-    #loop = asyncio.get_event_loop()
-    #loop.call_later(time, asyncio.create_task, updating_writer(context, sock))
-    asyncio.create_task(updating_writer(context, sock))
-
-    await StartAsyncTcpServer(context=context, identity=identity, address=("192.168.95.10", 502))
+    time = 1  # 5 seconds delay
+    loop = LoopingCall(f=updating_writer, a=(context,sock))
+    loop.start(time, now=False)  # initially delay by time
+    StartTcpServer(context, identity=identity, address=("192.168.95.10", 502))
 
 
 if __name__ == "__main__":
-    #run_update_server()
-    asyncio.run(run_update_server())
+    run_update_server()

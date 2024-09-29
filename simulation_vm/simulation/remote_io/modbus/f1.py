@@ -81,3 +81,7 @@ async def run_update_server():
 
 if __name__ == "__main__":
     asyncio.run(run_update_server())
+
+
+    sock.sendall(b'{"request":"write","data":{"inputs":{"product_valve_sp":' + repr(current_command).encode() + b'}}}\n')
+    sock.sendall(b'{"request":"write","data":{"inputs":{"purge_valve_sp":' + repr(current_command).encode() + b'}}}\n')
