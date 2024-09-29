@@ -23,8 +23,8 @@ systemctl daemon-reload
 systemctl enable simulation.service
 
 # Start the service immediately
-systemctl start simulation.service
+#systemctl start simulation.service
 
 # Check the status of the service
-systemctl status simulation.service
+#systemctl status simulation.service
 
