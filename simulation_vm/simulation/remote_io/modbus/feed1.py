@@ -46,18 +46,17 @@ def updating_writer(a):
     slave_id = 0x01 # slave address
     count = 50
     s = a[1]
-
+    
     current_command = context[slave_id].getValues(16, 1, 1)[0] / 65535.0*100.0
 
-    s.sendall(b'{"request":"write","data":{"inputs":{"f1_valve_sp":' + repr(current_command).encode()+ b'}}}\n')
-   # sock.sendall(b'{"request":"write","data":{"inputs":{"f2_valve_sp":' + repr(current_command).encode() + b'}}}\n')
+    s.send('{"request":"write","data":{"inputs":{"f1_valve_sp":'+repr(current_command)+'}}}\n')
 
     # import pdb; pdb.set_trace()
     #s.send('{"request":"read"}')
     data = json.loads(s.recv(1500))
     valve_pos = int(data["state"]["f1_valve_pos"]/100.0*65535)
     flow = int(data["outputs"]["f1_flow"]/500.0*65535)
-    print(data)
+    print data
     if valve_pos > 65535:
         valve_pos = 65535
     elif valve_pos < 0:
