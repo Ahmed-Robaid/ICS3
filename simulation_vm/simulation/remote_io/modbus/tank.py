@@ -54,7 +54,7 @@ def updating_writer(a):
     count = 50
     s = a[1]
     # import pdb; pdb.set_trace()
-    s.sendall('{"request":"read"}')
+    s.sendall(b'{"request":"read"}')
     data = json.loads(s.recv(1500))
     pressure = int(data["outputs"]["pressure"]/3200.0*65535)
     level = int(data["outputs"]["liquid_level"]/100.0*65535)
