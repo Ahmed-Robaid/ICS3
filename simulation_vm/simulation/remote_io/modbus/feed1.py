@@ -49,7 +49,7 @@ def updating_writer(a):
     
     current_command = context[slave_id].getValues(16, 1, 1)[0] / 65535.0*100.0
 
-    s.send('{"request":"write","data":{"inputs":{"f1_valve_sp":'+repr(current_command)+'}}}\n')
+    s.send(b'{"request":"write","data":{"inputs":{"f1_valve_sp":'+repr(current_command).encode()+ b'}}}\n')
 
     # import pdb; pdb.set_trace()
     #s.send('{"request":"read"}')
