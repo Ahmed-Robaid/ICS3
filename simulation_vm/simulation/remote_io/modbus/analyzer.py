@@ -53,7 +53,7 @@ def updating_writer(a):
     count = 50
     s = a[1]
     # import pdb; pdb.set_trace()
-    s.sendall('{"request":"read"}')
+    s.sendall('b{"request":"read"}')
     data = json.loads(s.recv(1500))
     a_in_purge = int(data["outputs"]["A_in_purge"]*65535)
     b_in_purge = int(data["outputs"]["B_in_purge"]*65535)
