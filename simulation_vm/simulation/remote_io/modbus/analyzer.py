@@ -53,8 +53,8 @@ def updating_writer(a):
     count = 50
     s = a[1]
     # import pdb; pdb.set_trace()
-    s.sendall('b{"request":"read"}')
-    data = json.loads(s.recv(1500))
+    s.sendall(b'{"request":"read"}')
+    data = json.loads(s.recv(1500).decode('utf-8'))
     a_in_purge = int(data["outputs"]["A_in_purge"]*65535)
     b_in_purge = int(data["outputs"]["B_in_purge"]*65535)
     c_in_purge = int(data["outputs"]["C_in_purge"]*65535)
@@ -73,11 +73,11 @@ def run_update_server():
 
 
     store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0,range(1,101)),
-        co=ModbusSequentialDataBlock(0,range(101,201)),
-        hr=ModbusSequentialDataBlock(0,range(201,301)),
-        ir=ModbusSequentialDataBlock(0,range(301,401)))
-
+        di=ModbusSequentialDataBlock(0, list(range(1, 101))),
+        co=ModbusSequentialDataBlock(0, list(range(101, 201))),
+        hr=ModbusSequentialDataBlock(0, list(range(201, 301))),
+        ir=ModbusSequentialDataBlock(0, list(range(301, 401)))
+    )
     context = ModbusServerContext(slaves=store, single=True)
 
     # ----------------------------------------------------------------------- #
