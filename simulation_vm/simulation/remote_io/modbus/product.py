@@ -50,8 +50,8 @@ def updating_writer(a):
 
     current_command = context[slave_id].getValues(16, 1, 1)[0]/ 65535.0 *100.0
 
-    s.sendall(b'{"request":"write","data":{"inputs":{"product_valve_sp":' + repr(current_command).encode() + b'}}}\n')
-    data = json.loads(s.recv(1500))
+    s.sendall(('{"request":"write","data":{"inputs":{"product_valve_sp":' + repr(current_command) + '}}}\n').encode())
+    data = json.loads(s.recv(1500).decode())
     valve_pos = int(data["state"]["product_valve_pos"]/100.0*65535)
     flow = int(data["outputs"]["product_flow"]/500.0*65535)
     print(data)
@@ -75,11 +75,11 @@ def run_update_server():
 
 
     store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0,range(1,101)),
-        co=ModbusSequentialDataBlock(0,range(101,201)),
-        hr=ModbusSequentialDataBlock(0,range(201,301)),
-        ir=ModbusSequentialDataBlock(0,range(301,401)))
-
+        di=ModbusSequentialDataBlock(0, list(range(1, 101))),
+        co=ModbusSequentialDataBlock(0, list(range(101, 201))),
+        hr=ModbusSequentialDataBlock(0, list(range(201, 301))),
+        ir=ModbusSequentialDataBlock(0, list(range(301, 401)))
+    )
     context = ModbusServerContext(slaves=store, single=True)
 
     # ----------------------------------------------------------------------- #
