@@ -55,7 +55,7 @@ def updating_writer(a):
     s = a[1]
     # import pdb; pdb.set_trace()
     s.sendall(b'{"request":"read"}')
-    data = json.loads(s.recv(1500))
+    data = json.loads(s.recv(1500).decode('utf-8'))
     pressure = int(data["outputs"]["pressure"]/3200.0*65535)
     level = int(data["outputs"]["liquid_level"]/100.0*65535)
     if pressure > 65535:
@@ -77,11 +77,11 @@ def run_update_server():
 
 
     store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0,range(1,101)),
-        co=ModbusSequentialDataBlock(0,range(101,201)),
-        hr=ModbusSequentialDataBlock(0,range(201,301)),
-        ir=ModbusSequentialDataBlock(0,range(301,401)))
-
+        di=ModbusSequentialDataBlock(0, list(range(1, 101))),
+        co=ModbusSequentialDataBlock(0, list(range(101, 201))),
+        hr=ModbusSequentialDataBlock(0, list(range(201, 301))),
+        ir=ModbusSequentialDataBlock(0, list(range(301, 401)))
+    )
     context = ModbusServerContext(slaves=store, single=True)
 
     # ----------------------------------------------------------------------- #
