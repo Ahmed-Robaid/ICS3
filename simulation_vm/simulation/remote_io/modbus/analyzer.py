@@ -54,11 +54,18 @@ def updating_writer(a):
     s = a[1]
     # import pdb; pdb.set_trace()
     s.sendall(b'{"request":"read"}')
-    data = json.loads(s.recv(1500).decode('utf-8'))
+    jdata = s.recv(1500).decode('utf-8')
+    try:
+        data = json.loads(jdata)
+        print(data)
+    except json.JSONDecodeError:
+        print("Failed to decode JSON response")
+        return
+    #data = json.loads(s.recv(1500).decode('utf-8'))
     a_in_purge = int(data["outputs"]["A_in_purge"]*65535)
     b_in_purge = int(data["outputs"]["B_in_purge"]*65535)
     c_in_purge = int(data["outputs"]["C_in_purge"]*65535)
-    print(data)
+    #print(data)
 
     # import pdb; pdb.set_trace()
     context[slave_id].setValues(4, 1, [a_in_purge,b_in_purge,c_in_purge])
