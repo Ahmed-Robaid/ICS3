@@ -49,7 +49,7 @@ def updating_writer(a):
     context  = a[0]
     readfunction = 0x03 # read holding registers
     writefunction = 0x10
-    slave_id = 0x01 # slave address
+    slave_id = 0x06 # slave address
     count = 50
     s = a[1]
     # import pdb; pdb.set_trace()
