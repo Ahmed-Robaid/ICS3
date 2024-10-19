@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sim_path="/home/simulation/ICS/simulation_vm/simulation/remote_io/modbus"
+sim_path="/home/simulation/ICS3/simulation_vm/simulation/remote_io/modbus"
 sudo pkill python3
 sudo pkill simulation
 $sim_path/../../simulation &
