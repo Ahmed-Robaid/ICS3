@@ -50,11 +50,11 @@ def updating_writer(a):
 
     current_command = context[slave_id].getValues(16, 1, 1)[0] / 65535.0 *100.0
 
-    s.sendall(('{"request":"write","data":{"inputs":{"f1_valve_sp":' + repr(current_command) + '}}}\n').encode())
+    s.sendall(('{"request":"write","data":{"inputs":{"f1_valve_sp":' + repr(current_command) + '}}}\n').encode('utf-8'))
 
     # import pdb; pdb.set_trace()
     #s.send('{"request":"read"}')
-    data = json.loads(s.recv(1500).decode())
+    data = json.loads(s.recv(1500).decode('utf-8'))
     valve_pos = int(data["state"]["f1_valve_pos"]/100.0*65535)
     flow = int(data["outputs"]["f1_flow"]/500.0*65535)
     print(data)
