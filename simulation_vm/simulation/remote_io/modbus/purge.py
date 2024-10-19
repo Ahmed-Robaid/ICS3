@@ -43,15 +43,15 @@ def updating_writer(a):
     print('updating')
     context  = a[0]
 
-    slave_id = 0x01 # slave address
+    slave_id = 0x03 # slave address
     count = 50
     s = a[1]
 
     current_command = context[slave_id].getValues(16, 1, 1)[0] / 65535.0 *100.0
 
-    s.sendall(('{"request":"write","data":{"inputs":{"purge_valve_sp":' + repr(current_command) + '}}}\n').encode())
+    s.sendall(('{"request":"write","data":{"inputs":{"purge_valve_sp":' + repr(current_command) + '}}}\n').encode('utf-8'))
 
-    data = json.loads(s.recv(1500).decode())
+    data = json.loads(s.recv(1500).decode('utf-8'))
     valve_pos = int(data["state"]["purge_valve_pos"]/100.0*65535)
     flow = int(data["outputs"]["purge_flow"]/500.0*65535)
     print(data)
