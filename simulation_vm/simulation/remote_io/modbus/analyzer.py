@@ -34,10 +34,10 @@ from twisted.internet.task import LoopingCall
 # --------------------------------------------------------------------------- #
 # configure the service logging
 # --------------------------------------------------------------------------- #
-import logging
-logging.basicConfig()
-log = logging.getLogger()
-log.setLevel(logging.DEBUG)
+#import logging
+#logging.basicConfig()
+#log = logging.getLogger()
+#log.setLevel(logging.DEBUG)
 
 # --------------------------------------------------------------------------- #
 # define your callback process
@@ -54,23 +54,16 @@ def updating_writer(a):
     s = a[1]
     # import pdb; pdb.set_trace()
     s.sendall(b'{"request":"read"}')
-    jdata = s.recv(1500).decode('utf-8')
-    try:
-        data = json.loads(jdata)
-        print(data)
-    except json.JSONDecodeError:
-        print("Failed to decode JSON response")
-        return
-    #data = json.loads(s.recv(1500).decode('utf-8'))
-    a_in_purge = int(data["outputs"]["A_in_purge"]*65535)
-    b_in_purge = int(data["outputs"]["B_in_purge"]*65535)
-    c_in_purge = int(data["outputs"]["C_in_purge"]*65535)
-    #print(data)
+    data = s.recv(1500).decode('utf-8')
+    a_in_purge = int(data["outputs"]["A_in_purge"] * 65535)
+    b_in_purge = int(data["outputs"]["B_in_purge"] * 65535)
+    c_in_purge = int(data["outputs"]["C_in_purge"] * 65535)
+    print(data)
 
     # import pdb; pdb.set_trace()
-    context[slave_id].setValues(4, 1, [a_in_purge,b_in_purge,c_in_purge])
+    context[slave_id].setValues(4, 1, [a_in_purge, b_in_purge, c_in_purge])
     values = context[slave_id].getValues(readfunction, 0, 2)
-    log.debug("Values from datastore: " + str(values))
+    #log.debug("Values from datastore: " + str(values))
 
 
 def run_update_server():
@@ -109,7 +102,7 @@ def run_update_server():
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=updating_writer, a=(context,sock))
     loop.start(time, now=False)  # initially delay by time
-    StartTcpServer(context, identity=identity, address=("192.168.95.15", 502))
+    StartTcpServer(context, identity=identity, address=("192.168.95.15", 5020))
 
 
 if __name__ == "__main__":
