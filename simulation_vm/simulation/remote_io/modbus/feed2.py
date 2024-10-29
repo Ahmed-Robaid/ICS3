@@ -107,7 +107,7 @@ def run_update_server():
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=updating_writer, a=(context,sock))
     loop.start(time, now=False)  # initially delay by time
-    StartTcpServer(context, identity=identity, address=("192.168.168.11", 5020))
+    StartTcpServer(context, identity=identity, address=("192.168.95.11", 5020))
 
 
 if __name__ == "__main__":
