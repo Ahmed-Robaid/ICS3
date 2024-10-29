@@ -50,12 +50,12 @@ def updating_writer(a):
     context  = a[0]
     readfunction = 0x03 # read holding registers
     writefunction = 0x10
-    slave_id = 0x05 # slave address
+    slave_id = 0x01 # slave address
     count = 50
     s = a[1]
     # import pdb; pdb.set_trace()
     s.sendall(b'{"request":"read"}')
-    data = json.loads(s.recv(1500).decode('utf-8'))
+    data = json.loads(s.recv(1500).decode())
     pressure = int(data["outputs"]["pressure"]/3200.0*65535)
     level = int(data["outputs"]["liquid_level"]/100.0*65535)
     if pressure > 65535:
@@ -77,11 +77,10 @@ def run_update_server():
 
 
     store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0, list(range(1, 101))),
-        co=ModbusSequentialDataBlock(0, list(range(101, 201))),
-        hr=ModbusSequentialDataBlock(0, list(range(201, 301))),
-        ir=ModbusSequentialDataBlock(0, list(range(301, 401)))
-    )
+        di=ModbusSequentialDataBlock(0, range(1, 101)),
+        co=ModbusSequentialDataBlock(0, range(101, 201)),
+        hr=ModbusSequentialDataBlock(0, range(201, 301)),
+        ir=ModbusSequentialDataBlock(0, range(301, 401)))
     context = ModbusServerContext(slaves=store, single=True)
 
     # ----------------------------------------------------------------------- #
@@ -106,7 +105,7 @@ def run_update_server():
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=updating_writer, a=(context,sock))
     loop.start(time, now=False)  # initially delay by time
-    StartTcpServer(context, identity=identity, address=("192.168.95.14", 502))
+    StartTcpServer(context, identity=identity, address=("192.168.168.14", 5020))
 
 
 if __name__ == "__main__":
