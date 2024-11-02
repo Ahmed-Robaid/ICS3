@@ -11,7 +11,7 @@ Description=Start Simulation on Boot
 
 [Service]
 Type=forking
-ExecStart=/bin/bash /home/$(logname)/ICS/simulation_vm/simulation/remote_io/modbus/run_all.sh
+ExecStart=/bin/bash /home/$(logname)/ICS3/simulation_vm/simulation/remote_io/modbus/run_all.sh
 
 [Install]
 WantedBy=multi-user.target
