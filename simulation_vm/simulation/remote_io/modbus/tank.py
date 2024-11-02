@@ -23,8 +23,6 @@ from pymodbus.server.asynchronous import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusServerContext, ModbusSlaveContext
-from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
-import random
 from pymodbus.version import version
 
 # --------------------------------------------------------------------------- #
@@ -38,7 +36,7 @@ from twisted.internet.task import LoopingCall
 import logging
 logging.basicConfig()
 log = logging.getLogger()
-log.setLevel(logging.DEBUG)
+log.setLevel(logging.INFO)
 
 # --------------------------------------------------------------------------- #
 # define your callback process
@@ -46,7 +44,7 @@ log.setLevel(logging.DEBUG)
 
 
 def updating_writer(a):
-    print('updating')
+    print('updating TANK')
     context  = a[0]
     readfunction = 0x03 # read holding registers
     writefunction = 0x10
@@ -54,13 +52,17 @@ def updating_writer(a):
     count = 50
     s = a[1]
     # import pdb; pdb.set_trace()
-    s.sendall(b'{"request":"read"}')
-    data = json.loads(s.recv(1500).decode())
+    s.send(b'{"request":"read"}')
+    try:
+        data = json.loads(s.recv(1500).decode())
+    except json.JSONDecodeError:
+        print("Received data is not in JSON format.")
+        return
     pressure = int(data["outputs"]["pressure"]/3200.0*65535)
     level = int(data["outputs"]["liquid_level"]/100.0*65535)
     if pressure > 65535:
         pressure = 65535
-    if level > 65535:
+    if level > 65525:
         level = 65535
     print(data)
 
@@ -69,18 +71,17 @@ def updating_writer(a):
     values = context[slave_id].getValues(readfunction, 0, 2)
     log.debug("Values from datastore: " + str(values))
 
-
 def run_update_server():
     # ----------------------------------------------------------------------- #
     # initialize your data store
     # ----------------------------------------------------------------------- #
 
-
     store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0, range(1, 101)),
-        co=ModbusSequentialDataBlock(0, range(101, 201)),
-        hr=ModbusSequentialDataBlock(0, range(201, 301)),
-        ir=ModbusSequentialDataBlock(0, range(301, 401)))
+        di=ModbusSequentialDataBlock(0,range(1,101)),
+        co=ModbusSequentialDataBlock(0,range(101,201)),
+        hr=ModbusSequentialDataBlock(0,range(201,301)),
+        ir=ModbusSequentialDataBlock(0,range(301,401)))
+
     context = ModbusServerContext(slaves=store, single=True)
 
     # ----------------------------------------------------------------------- #
@@ -105,7 +106,7 @@ def run_update_server():
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=updating_writer, a=(context,sock))
     loop.start(time, now=False)  # initially delay by time
-    StartTcpServer(context, identity=identity, address=("192.168.95.14", 5020))
+    StartTcpServer(context, identity=identity, address=("192.168.95.14", 502))
 
 
 if __name__ == "__main__":
