@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns:ns1="http://www.plcopen.org/xml/tc6_0201" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="victor" productName="openplc" productVersion="2" creationDateTime="2018-03-28T16:39:26"/>
-  <contentHeader name="simplified_te" modificationDateTime="2018-05-02T15:15:55">
+  <contentHeader name="simplified_te" modificationDateTime="2024-11-02T19:26:02">
     <coordinateInfo>
       <fbd>
         <scaling x="0" y="0"/>
@@ -20,7 +20,7 @@
       <pou name="main" pouType="program">
         <interface>
           <localVars>
-            <variable name="flow_set" address="%MW0">
+            <variable name="flow_set" address="%MW100">
               <type>
                 <UINT/>
               </type>
@@ -31,7 +31,7 @@
                 <xhtml:p><![CDATA[13107]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="a_setpoint" address="%MW1">
+            <variable name="a_setpoint" address="%MW101">
               <type>
                 <UINT/>
               </type>
@@ -42,7 +42,7 @@
                 <xhtml:p><![CDATA[30801]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="pressure_sp" address="%MW2">
+            <variable name="pressure_sp" address="%MW102">
               <type>
                 <UINT/>
               </type>
@@ -53,7 +53,7 @@
                 <xhtml:p><![CDATA[58981]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="override_sp" address="%MW3">
+            <variable name="override_sp" address="%MW103">
               <type>
                 <UINT/>
               </type>
@@ -64,7 +64,7 @@
                 <xhtml:p><![CDATA[31675]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="level_sp" address="%MW4">
+            <variable name="level_sp" address="%MW104">
               <type>
                 <UINT/>
               </type>
@@ -84,7 +84,7 @@
             </variable>
           </localVars>
           <localVars>
-            <variable name="f1_valve_pos" address="%IW0">
+            <variable name="f1_valve_pos" address="%IW100">
               <type>
                 <UINT/>
               </type>
@@ -92,7 +92,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="f1_flow" address="%IW1">
+            <variable name="f1_flow" address="%IW101">
               <type>
                 <UINT/>
               </type>
@@ -100,7 +100,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="f2_valve_pos" address="%IW2">
+            <variable name="f2_valve_pos" address="%IW102">
               <type>
                 <UINT/>
               </type>
@@ -108,7 +108,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="f2_flow" address="%IW3">
+            <variable name="f2_flow" address="%IW103">
               <type>
                 <UINT/>
               </type>
@@ -116,7 +116,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="purge_valve_pos" address="%IW4">
+            <variable name="purge_valve_pos" address="%IW104">
               <type>
                 <UINT/>
               </type>
@@ -124,7 +124,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="purge_flow" address="%IW5">
+            <variable name="purge_flow" address="%IW105">
               <type>
                 <UINT/>
               </type>
@@ -132,7 +132,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="product_valve_pos" address="%IW6">
+            <variable name="product_valve_pos" address="%IW106">
               <type>
                 <UINT/>
               </type>
@@ -140,7 +140,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="product_flow" address="%IW7">
+            <variable name="product_flow" address="%IW107">
               <type>
                 <UINT/>
               </type>
@@ -148,7 +148,7 @@
                 <simpleValue value="10000"/>
               </initialValue>
             </variable>
-            <variable name="pressure" address="%IW8">
+            <variable name="pressure" address="%IW108">
               <type>
                 <UINT/>
               </type>
@@ -156,7 +156,7 @@
                 <simpleValue value="60000"/>
               </initialValue>
             </variable>
-            <variable name="level" address="%IW9">
+            <variable name="level" address="%IW109">
               <type>
                 <UINT/>
               </type>
@@ -164,7 +164,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="a_in_purge" address="%IW10">
+            <variable name="a_in_purge" address="%IW110">
               <type>
                 <UINT/>
               </type>
@@ -172,7 +172,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="b_in_purge" address="%IW11">
+            <variable name="b_in_purge" address="%IW111">
               <type>
                 <UINT/>
               </type>
@@ -180,7 +180,7 @@
                 <simpleValue value="10000"/>
               </initialValue>
             </variable>
-            <variable name="c_in_purge" address="%IW12">
+            <variable name="c_in_purge" address="%IW112">
               <type>
                 <UINT/>
               </type>
@@ -188,7 +188,7 @@
                 <simpleValue value="10000"/>
               </initialValue>
             </variable>
-            <variable name="f1_valve_sp" address="%QW0">
+            <variable name="f1_valve_sp" address="%QW100">
               <type>
                 <UINT/>
               </type>
@@ -196,7 +196,7 @@
                 <simpleValue value="65535"/>
               </initialValue>
             </variable>
-            <variable name="f2_valve_sp" address="%QW1">
+            <variable name="f2_valve_sp" address="%QW101">
               <type>
                 <UINT/>
               </type>
@@ -204,7 +204,7 @@
                 <simpleValue value="65535"/>
               </initialValue>
             </variable>
-            <variable name="purge_valve_sp" address="%QW2">
+            <variable name="purge_valve_sp" address="%QW102">
               <type>
                 <UINT/>
               </type>
@@ -212,7 +212,7 @@
                 <simpleValue value="0"/>
               </initialValue>
             </variable>
-            <variable name="product_valve_sp" address="%QW3">
+            <variable name="product_valve_sp" address="%QW103">
               <type>
                 <UINT/>
               </type>
@@ -256,57 +256,57 @@
             </variable>
           </localVars>
           <localVars>
-            <variable name="hmi_pressure" address="%MW20">
+            <variable name="hmi_pressure" address="%MW120">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_level" address="%MW21">
+            <variable name="hmi_level" address="%MW121">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_f1_valve_pos" address="%MW22">
+            <variable name="hmi_f1_valve_pos" address="%MW122">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_f1_flow" address="%MW23">
+            <variable name="hmi_f1_flow" address="%MW123">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_f2_valve_pos" address="%MW24">
+            <variable name="hmi_f2_valve_pos" address="%MW124">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_f2_flow" address="%MW25">
+            <variable name="hmi_f2_flow" address="%MW125">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_purge_valve_pos" address="%MW26">
+            <variable name="hmi_purge_valve_pos" address="%MW126">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_purge_flow" address="%MW27">
+            <variable name="hmi_purge_flow" address="%MW127">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_product_valve_pos" address="%MW28">
+            <variable name="hmi_product_valve_pos" address="%MW128">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_product_flow" address="%MW29">
+            <variable name="hmi_product_flow" address="%MW129">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="scan_count" address="%MW30">
+            <variable name="scan_count" address="%MW130">
               <type>
                 <UINT/>
               </type>
@@ -419,7 +419,7 @@
                 <xhtml:p><![CDATA[Scale variables for HMI (it treats everything as signed integers)]]></xhtml:p>
               </content>
             </comment>
-            <block localId="57" typeName="scale_to_signed" instanceName="scale_to_signed0" height="40" width="161">
+            <block localId="57" typeName="scale_to_signed" instanceName="scale_to_signed0" height="40" width="175">
               <position x="268" y="1761"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -438,7 +438,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -450,7 +450,7 @@
               </connectionPointOut>
               <expression>30000</expression>
             </inVariable>
-            <outVariable localId="63" height="27" width="103" negated="false">
+            <outVariable localId="63" height="27" width="106" negated="false">
               <position x="496" y="1765"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -458,12 +458,12 @@
                   <position x="496" y="1778"/>
                   <position x="455" y="1778"/>
                   <position x="455" y="1791"/>
-                  <position x="429" y="1791"/>
+                  <position x="443" y="1791"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_pressure</expression>
             </outVariable>
-            <block localId="2" typeName="scale_to_signed" instanceName="scale_to_signed1" height="40" width="161" executionOrderId="0">
+            <block localId="2" typeName="scale_to_signed" instanceName="scale_to_signed1" height="40" width="175" executionOrderId="0">
               <position x="251" y="1840"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -482,7 +482,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -507,7 +507,7 @@
               </connectionPointIn>
               <expression>hmi_level</expression>
             </outVariable>
-            <block localId="7" typeName="scale_to_signed" instanceName="scale_to_signed2" height="40" width="161" executionOrderId="0">
+            <block localId="7" typeName="scale_to_signed" instanceName="scale_to_signed2" height="40" width="175" executionOrderId="0">
               <position x="250" y="1922"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -528,7 +528,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -540,7 +540,7 @@
               </connectionPointOut>
               <expression>10000</expression>
             </inVariable>
-            <outVariable localId="9" height="27" width="132" negated="false" executionOrderId="0">
+            <outVariable localId="9" height="27" width="138" negated="false" executionOrderId="0">
               <position x="478" y="1926"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -548,12 +548,12 @@
                   <position x="478" y="1939"/>
                   <position x="437" y="1939"/>
                   <position x="437" y="1952"/>
-                  <position x="411" y="1952"/>
+                  <position x="425" y="1952"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_f1_valve_pos</expression>
             </outVariable>
-            <block localId="10" typeName="scale_to_signed" instanceName="scale_to_signed3" height="40" width="161" executionOrderId="0">
+            <block localId="10" typeName="scale_to_signed" instanceName="scale_to_signed3" height="40" width="175" executionOrderId="0">
               <position x="241" y="2014"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -574,7 +574,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -586,7 +586,7 @@
               </connectionPointOut>
               <expression>10000</expression>
             </inVariable>
-            <outVariable localId="12" height="27" width="132" negated="false" executionOrderId="0">
+            <outVariable localId="12" height="27" width="138" negated="false" executionOrderId="0">
               <position x="469" y="2018"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -594,12 +594,12 @@
                   <position x="469" y="2031"/>
                   <position x="428" y="2031"/>
                   <position x="428" y="2044"/>
-                  <position x="402" y="2044"/>
+                  <position x="416" y="2044"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_f2_valve_pos</expression>
             </outVariable>
-            <block localId="13" typeName="scale_to_signed" instanceName="scale_to_signed4" height="40" width="161" executionOrderId="0">
+            <block localId="13" typeName="scale_to_signed" instanceName="scale_to_signed4" height="40" width="175" executionOrderId="0">
               <position x="255" y="2079"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -620,7 +620,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -632,7 +632,7 @@
               </connectionPointOut>
               <expression>3000</expression>
             </inVariable>
-            <outVariable localId="17" height="27" width="159" negated="false" executionOrderId="0">
+            <outVariable localId="17" height="27" width="162" negated="false" executionOrderId="0">
               <position x="477" y="2097"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -642,12 +642,12 @@
                   <position x="465" y="2112"/>
                   <position x="474" y="2112"/>
                   <position x="474" y="2109"/>
-                  <position x="416" y="2109"/>
+                  <position x="430" y="2109"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_purge_valve_pos</expression>
             </outVariable>
-            <block localId="19" typeName="scale_to_signed" instanceName="scale_to_signed5" height="40" width="161" executionOrderId="0">
+            <block localId="19" typeName="scale_to_signed" instanceName="scale_to_signed5" height="40" width="175" executionOrderId="0">
               <position x="244" y="2170"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -668,7 +668,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -680,7 +680,7 @@
               </connectionPointOut>
               <expression>15000</expression>
             </inVariable>
-            <outVariable localId="21" height="27" width="173" negated="false" executionOrderId="0">
+            <outVariable localId="21" height="27" width="178" negated="false" executionOrderId="0">
               <position x="472" y="2174"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -688,12 +688,12 @@
                   <position x="472" y="2187"/>
                   <position x="431" y="2187"/>
                   <position x="431" y="2200"/>
-                  <position x="405" y="2200"/>
+                  <position x="419" y="2200"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_product_valve_pos</expression>
             </outVariable>
-            <block localId="23" typeName="scale_to_signed" instanceName="scale_to_signed6" height="40" width="161" executionOrderId="0">
+            <block localId="23" typeName="scale_to_signed" instanceName="scale_to_signed6" height="40" width="175" executionOrderId="0">
               <position x="236" y="2248"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -712,7 +712,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -737,7 +737,7 @@
               </connectionPointIn>
               <expression>hmi_f1_flow</expression>
             </outVariable>
-            <block localId="26" typeName="scale_to_signed" instanceName="scale_to_signed7" height="40" width="161" executionOrderId="0">
+            <block localId="26" typeName="scale_to_signed" instanceName="scale_to_signed7" height="40" width="175" executionOrderId="0">
               <position x="231" y="2330"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -756,7 +756,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -781,7 +781,7 @@
               </connectionPointIn>
               <expression>hmi_f2_flow</expression>
             </outVariable>
-            <block localId="30" typeName="scale_to_signed" instanceName="scale_to_signed8" height="40" width="161" executionOrderId="0">
+            <block localId="30" typeName="scale_to_signed" instanceName="scale_to_signed8" height="40" width="175" executionOrderId="0">
               <position x="228" y="2403"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -800,7 +800,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -825,7 +825,7 @@
               </connectionPointIn>
               <expression>hmi_purge_flow</expression>
             </outVariable>
-            <block localId="34" typeName="scale_to_signed" instanceName="scale_to_signed9" height="40" width="161" executionOrderId="0">
+            <block localId="34" typeName="scale_to_signed" instanceName="scale_to_signed9" height="40" width="175" executionOrderId="0">
               <position x="242" y="2480"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -846,7 +846,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -858,15 +858,15 @@
               </connectionPointOut>
               <expression>15000</expression>
             </inVariable>
-            <outVariable localId="36" height="27" width="136" negated="false" executionOrderId="0">
+            <outVariable localId="36" height="27" width="138" negated="false" executionOrderId="0">
               <position x="463" y="2487"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="34" formalParameter="output_int">
                   <position x="463" y="2500"/>
-                  <position x="413" y="2500"/>
-                  <position x="413" y="2510"/>
-                  <position x="403" y="2510"/>
+                  <position x="427" y="2500"/>
+                  <position x="427" y="2510"/>
+                  <position x="417" y="2510"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_product_flow</expression>
@@ -912,10 +912,10 @@
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="88" height="27" width="88" negated="false">
+            <inVariable localId="88" height="27" width="90" negated="false">
               <position x="109" y="2584"/>
               <connectionPointOut>
-                <relPosition x="88" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>scan_count</expression>
             </inVariable>
@@ -926,7 +926,7 @@
               </connectionPointOut>
               <expression>1</expression>
             </inVariable>
-            <outVariable localId="90" height="27" width="88" negated="false">
+            <outVariable localId="90" height="27" width="90" negated="false">
               <position x="373" y="2582"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -974,10 +974,10 @@
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="37" height="27" width="88" negated="false" executionOrderId="0">
+            <inVariable localId="37" height="27" width="90" negated="false" executionOrderId="0">
               <position x="87" y="2703"/>
               <connectionPointOut>
-                <relPosition x="88" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>scan_count</expression>
             </inVariable>
@@ -1035,7 +1035,7 @@
               </connectionPointOut>
               <expression>0</expression>
             </inVariable>
-            <outVariable localId="41" height="27" width="88" negated="false" executionOrderId="0">
+            <outVariable localId="41" height="27" width="90" negated="false" executionOrderId="0">
               <position x="497" y="2750"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -5120,7 +5120,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
             <pouInstance name="instance0" typeName="main"/>
           </task>
           <globalVars>
-            <variable name="run_bit" address="%QX0.0">
+            <variable name="run_bit" address="%QX100.0">
               <type>
                 <BOOL/>
               </type>
