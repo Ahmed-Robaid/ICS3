@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns:ns1="http://www.plcopen.org/xml/tc6_0201" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="victor" productName="openplc" productVersion="2" creationDateTime="2018-03-28T16:39:26"/>
-  <contentHeader name="simplified_te" modificationDateTime="2020-02-03T11:00:07">
+  <contentHeader name="simplified_te" modificationDateTime="2024-11-02T18:32:43">
     <coordinateInfo>
       <fbd>
         <scaling x="0" y="0"/>
@@ -27,7 +27,7 @@
             </variable>
           </localVars>
           <localVars>
-            <variable name="flow_set" address="%MW0">
+            <variable name="flow_set" address="%MW100">
               <type>
                 <UINT/>
               </type>
@@ -38,7 +38,7 @@
                 <xhtml:p><![CDATA[13107]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="a_setpoint" address="%MW1">
+            <variable name="a_setpoint" address="%MW101">
               <type>
                 <UINT/>
               </type>
@@ -49,7 +49,7 @@
                 <xhtml:p><![CDATA[30801]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="pressure_sp" address="%MW2">
+            <variable name="pressure_sp" address="%MW102">
               <type>
                 <UINT/>
               </type>
@@ -60,7 +60,7 @@
                 <xhtml:p><![CDATA[55295]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="override_sp" address="%MW3">
+            <variable name="override_sp" address="%MW103">
               <type>
                 <UINT/>
               </type>
@@ -71,7 +71,7 @@
                 <xhtml:p><![CDATA[31675]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="level_sp" address="%MW4">
+            <variable name="level_sp" address="%MW104">
               <type>
                 <UINT/>
               </type>
@@ -96,7 +96,7 @@
             </variable>
           </localVars>
           <localVars>
-            <variable name="f1_valve_pos" address="%IW0">
+            <variable name="f1_valve_pos" address="%IW100">
               <type>
                 <UINT/>
               </type>
@@ -104,7 +104,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="f1_flow" address="%IW1">
+            <variable name="f1_flow" address="%IW101">
               <type>
                 <UINT/>
               </type>
@@ -112,7 +112,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="f2_valve_pos" address="%IW2">
+            <variable name="f2_valve_pos" address="%IW102">
               <type>
                 <UINT/>
               </type>
@@ -120,7 +120,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="f2_flow" address="%IW3">
+            <variable name="f2_flow" address="%IW103">
               <type>
                 <UINT/>
               </type>
@@ -128,7 +128,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="purge_valve_pos" address="%IW4">
+            <variable name="purge_valve_pos" address="%IW104">
               <type>
                 <UINT/>
               </type>
@@ -136,7 +136,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="purge_flow" address="%IW5">
+            <variable name="purge_flow" address="%IW105">
               <type>
                 <UINT/>
               </type>
@@ -144,7 +144,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="product_valve_pos" address="%IW6">
+            <variable name="product_valve_pos" address="%IW106">
               <type>
                 <UINT/>
               </type>
@@ -152,7 +152,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="product_flow" address="%IW7">
+            <variable name="product_flow" address="%IW107">
               <type>
                 <UINT/>
               </type>
@@ -160,7 +160,7 @@
                 <simpleValue value="10000"/>
               </initialValue>
             </variable>
-            <variable name="pressure" address="%IW8">
+            <variable name="pressure" address="%IW108">
               <type>
                 <UINT/>
               </type>
@@ -168,7 +168,7 @@
                 <simpleValue value="60000"/>
               </initialValue>
             </variable>
-            <variable name="level" address="%IW9">
+            <variable name="level" address="%IW109">
               <type>
                 <UINT/>
               </type>
@@ -176,7 +176,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="a_in_purge" address="%IW10">
+            <variable name="a_in_purge" address="%IW110">
               <type>
                 <UINT/>
               </type>
@@ -184,7 +184,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="b_in_purge" address="%IW11">
+            <variable name="b_in_purge" address="%IW111">
               <type>
                 <UINT/>
               </type>
@@ -192,7 +192,7 @@
                 <simpleValue value="10000"/>
               </initialValue>
             </variable>
-            <variable name="c_in_purge" address="%IW12">
+            <variable name="c_in_purge" address="%IW112">
               <type>
                 <UINT/>
               </type>
@@ -200,7 +200,7 @@
                 <simpleValue value="10000"/>
               </initialValue>
             </variable>
-            <variable name="f1_valve_sp" address="%QW0">
+            <variable name="f1_valve_sp" address="%QW100">
               <type>
                 <UINT/>
               </type>
@@ -208,7 +208,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="f2_valve_sp" address="%QW1">
+            <variable name="f2_valve_sp" address="%QW101">
               <type>
                 <UINT/>
               </type>
@@ -216,7 +216,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="purge_valve_sp" address="%QW2">
+            <variable name="purge_valve_sp" address="%QW102">
               <type>
                 <UINT/>
               </type>
@@ -224,7 +224,7 @@
                 <simpleValue value="30000"/>
               </initialValue>
             </variable>
-            <variable name="product_valve_sp" address="%QW3">
+            <variable name="product_valve_sp" address="%QW103">
               <type>
                 <UINT/>
               </type>
@@ -273,57 +273,57 @@
             </variable>
           </localVars>
           <localVars>
-            <variable name="hmi_pressure" address="%MW20">
+            <variable name="hmi_pressure" address="%MW120">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_level" address="%MW21">
+            <variable name="hmi_level" address="%MW121">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_f1_valve_pos" address="%MW22">
+            <variable name="hmi_f1_valve_pos" address="%MW122">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_f1_flow" address="%MW23">
+            <variable name="hmi_f1_flow" address="%MW123">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_f2_valve_pos" address="%MW24">
+            <variable name="hmi_f2_valve_pos" address="%MW124">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_f2_flow" address="%MW25">
+            <variable name="hmi_f2_flow" address="%MW125">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_purge_valve_pos" address="%MW26">
+            <variable name="hmi_purge_valve_pos" address="%MW126">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_purge_flow" address="%MW27">
+            <variable name="hmi_purge_flow" address="%MW127">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_product_valve_pos" address="%MW28">
+            <variable name="hmi_product_valve_pos" address="%MW128">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="hmi_product_flow" address="%MW29">
+            <variable name="hmi_product_flow" address="%MW129">
               <type>
                 <INT/>
               </type>
             </variable>
-            <variable name="scan_count" address="%MW30">
+            <variable name="scan_count" address="%MW130">
               <type>
                 <UINT/>
               </type>
@@ -445,10 +445,10 @@
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="6" height="27" width="103" negated="false">
+            <inVariable localId="6" height="27" width="106" negated="false">
               <position x="62" y="174"/>
               <connectionPointOut>
-                <relPosition x="103" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>product_flow</expression>
             </inVariable>
@@ -503,7 +503,7 @@
               </connectionPointOut>
               <expression>a_in_purge</expression>
             </inVariable>
-            <block localId="27" typeName="composition_control" instanceName="composition_control0" height="80" width="159">
+            <block localId="27" typeName="composition_control" instanceName="composition_control0" height="80" width="162">
               <position x="414" y="610"/>
               <inputVariables>
                 <variable formalParameter="a_in_purge">
@@ -535,7 +535,7 @@
                       <position x="414" y="680"/>
                       <position x="340" y="680"/>
                       <position x="340" y="716"/>
-                      <position x="267" y="716"/>
+                      <position x="274" y="716"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -544,7 +544,7 @@
               <outputVariables>
                 <variable formalParameter="new_pos">
                   <connectionPointOut>
-                    <relPosition x="159" y="30"/>
+                    <relPosition x="162" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -566,7 +566,7 @@
                 <xhtml:p><![CDATA[Scale variables for HMI (it treats everything as signed integers)]]></xhtml:p>
               </content>
             </comment>
-            <block localId="57" typeName="scale_to_signed" instanceName="scale_to_signed0" height="40" width="161">
+            <block localId="57" typeName="scale_to_signed" instanceName="scale_to_signed0" height="40" width="175">
               <position x="268" y="1761"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -576,7 +576,7 @@
                       <position x="268" y="1791"/>
                       <position x="247" y="1791"/>
                       <position x="247" y="1794"/>
-                      <position x="226" y="1794"/>
+                      <position x="230" y="1794"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -585,12 +585,12 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <outVariable localId="58" height="27" width="90" negated="false">
+            <outVariable localId="58" height="27" width="98" negated="false">
               <position x="608" y="222"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -630,7 +630,7 @@
               </connectionPointOut>
               <expression>pressure</expression>
             </inVariable>
-            <block localId="38" typeName="pressure_control" instanceName="pressure_control0" height="80" width="166" executionOrderId="0">
+            <block localId="38" typeName="pressure_control" instanceName="pressure_control0" height="80" width="175" executionOrderId="0">
               <position x="448" y="421"/>
               <inputVariables>
                 <variable formalParameter="pressure">
@@ -662,7 +662,7 @@
                       <position x="448" y="491"/>
                       <position x="428" y="491"/>
                       <position x="428" y="534"/>
-                      <position x="363" y="534"/>
+                      <position x="367" y="534"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -671,19 +671,19 @@
               <outputVariables>
                 <variable formalParameter="valve_pos">
                   <connectionPointOut>
-                    <relPosition x="166" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="62" height="27" width="70" negated="false">
+            <inVariable localId="62" height="27" width="74" negated="false">
               <position x="156" y="1781"/>
               <connectionPointOut>
-                <relPosition x="70" y="13"/>
+                <relPosition x="74" y="13"/>
               </connectionPointOut>
               <expression>pressure</expression>
             </inVariable>
-            <outVariable localId="63" height="27" width="103" negated="false">
+            <outVariable localId="63" height="27" width="106" negated="false">
               <position x="496" y="1765"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -691,12 +691,12 @@
                   <position x="496" y="1778"/>
                   <position x="455" y="1778"/>
                   <position x="455" y="1791"/>
-                  <position x="429" y="1791"/>
+                  <position x="443" y="1791"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_pressure</expression>
             </outVariable>
-            <block localId="2" typeName="scale_to_signed" instanceName="scale_to_signed1" height="40" width="161" executionOrderId="0">
+            <block localId="2" typeName="scale_to_signed" instanceName="scale_to_signed1" height="40" width="175" executionOrderId="0">
               <position x="251" y="1840"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -715,7 +715,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -740,7 +740,7 @@
               </connectionPointIn>
               <expression>hmi_level</expression>
             </outVariable>
-            <block localId="7" typeName="scale_to_signed" instanceName="scale_to_signed2" height="40" width="161" executionOrderId="0">
+            <block localId="7" typeName="scale_to_signed" instanceName="scale_to_signed2" height="40" width="175" executionOrderId="0">
               <position x="250" y="1922"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -752,7 +752,7 @@
                       <position x="229" y="1953"/>
                       <position x="247" y="1953"/>
                       <position x="247" y="1949"/>
-                      <position x="219" y="1949"/>
+                      <position x="226" y="1949"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -761,19 +761,19 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="8" height="27" width="99" negated="false" executionOrderId="0">
+            <inVariable localId="8" height="27" width="106" negated="false" executionOrderId="0">
               <position x="120" y="1936"/>
               <connectionPointOut>
-                <relPosition x="99" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>f1_valve_pos</expression>
             </inVariable>
-            <outVariable localId="9" height="27" width="132" negated="false" executionOrderId="0">
+            <outVariable localId="9" height="27" width="138" negated="false" executionOrderId="0">
               <position x="478" y="1926"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -781,12 +781,12 @@
                   <position x="478" y="1939"/>
                   <position x="437" y="1939"/>
                   <position x="437" y="1952"/>
-                  <position x="411" y="1952"/>
+                  <position x="425" y="1952"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_f1_valve_pos</expression>
             </outVariable>
-            <block localId="10" typeName="scale_to_signed" instanceName="scale_to_signed3" height="40" width="161" executionOrderId="0">
+            <block localId="10" typeName="scale_to_signed" instanceName="scale_to_signed3" height="40" width="175" executionOrderId="0">
               <position x="241" y="2014"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -796,9 +796,9 @@
                       <position x="241" y="2044"/>
                       <position x="220" y="2044"/>
                       <position x="220" y="2045"/>
-                      <position x="238" y="2045"/>
-                      <position x="238" y="2047"/>
-                      <position x="228" y="2047"/>
+                      <position x="245" y="2045"/>
+                      <position x="245" y="2047"/>
+                      <position x="235" y="2047"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -807,19 +807,19 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="11" height="27" width="99" negated="false" executionOrderId="0">
+            <inVariable localId="11" height="27" width="106" negated="false" executionOrderId="0">
               <position x="129" y="2034"/>
               <connectionPointOut>
-                <relPosition x="99" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>f2_valve_pos</expression>
             </inVariable>
-            <outVariable localId="12" height="27" width="132" negated="false" executionOrderId="0">
+            <outVariable localId="12" height="27" width="138" negated="false" executionOrderId="0">
               <position x="469" y="2018"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -827,12 +827,12 @@
                   <position x="469" y="2031"/>
                   <position x="428" y="2031"/>
                   <position x="428" y="2044"/>
-                  <position x="402" y="2044"/>
+                  <position x="416" y="2044"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_f2_valve_pos</expression>
             </outVariable>
-            <block localId="13" typeName="scale_to_signed" instanceName="scale_to_signed4" height="40" width="161" executionOrderId="0">
+            <block localId="13" typeName="scale_to_signed" instanceName="scale_to_signed4" height="40" width="175" executionOrderId="0">
               <position x="255" y="2079"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -844,7 +844,7 @@
                       <position x="228" y="2124"/>
                       <position x="273" y="2124"/>
                       <position x="273" y="2129"/>
-                      <position x="202" y="2129"/>
+                      <position x="206" y="2129"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -853,19 +853,19 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="16" height="27" width="126" negated="false" executionOrderId="0">
+            <inVariable localId="16" height="27" width="130" negated="false" executionOrderId="0">
               <position x="76" y="2116"/>
               <connectionPointOut>
-                <relPosition x="126" y="13"/>
+                <relPosition x="130" y="13"/>
               </connectionPointOut>
               <expression>purge_valve_pos</expression>
             </inVariable>
-            <outVariable localId="17" height="27" width="159" negated="false" executionOrderId="0">
+            <outVariable localId="17" height="27" width="162" negated="false" executionOrderId="0">
               <position x="477" y="2097"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -875,12 +875,12 @@
                   <position x="465" y="2112"/>
                   <position x="474" y="2112"/>
                   <position x="474" y="2109"/>
-                  <position x="416" y="2109"/>
+                  <position x="430" y="2109"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_purge_valve_pos</expression>
             </outVariable>
-            <block localId="19" typeName="scale_to_signed" instanceName="scale_to_signed5" height="40" width="161" executionOrderId="0">
+            <block localId="19" typeName="scale_to_signed" instanceName="scale_to_signed5" height="40" width="175" executionOrderId="0">
               <position x="244" y="2170"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -892,7 +892,7 @@
                       <position x="223" y="2201"/>
                       <position x="282" y="2201"/>
                       <position x="282" y="2200"/>
-                      <position x="210" y="2200"/>
+                      <position x="216" y="2200"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -901,19 +901,19 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="20" height="27" width="140" negated="false" executionOrderId="0">
+            <inVariable localId="20" height="27" width="146" negated="false" executionOrderId="0">
               <position x="70" y="2187"/>
               <connectionPointOut>
-                <relPosition x="140" y="13"/>
+                <relPosition x="146" y="13"/>
               </connectionPointOut>
               <expression>product_valve_pos</expression>
             </inVariable>
-            <outVariable localId="21" height="27" width="173" negated="false" executionOrderId="0">
+            <outVariable localId="21" height="27" width="178" negated="false" executionOrderId="0">
               <position x="472" y="2174"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -921,12 +921,12 @@
                   <position x="472" y="2187"/>
                   <position x="431" y="2187"/>
                   <position x="431" y="2200"/>
-                  <position x="405" y="2200"/>
+                  <position x="419" y="2200"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_product_valve_pos</expression>
             </outVariable>
-            <block localId="23" typeName="scale_to_signed" instanceName="scale_to_signed6" height="40" width="161" executionOrderId="0">
+            <block localId="23" typeName="scale_to_signed" instanceName="scale_to_signed6" height="40" width="175" executionOrderId="0">
               <position x="236" y="2248"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -945,7 +945,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -970,7 +970,7 @@
               </connectionPointIn>
               <expression>hmi_f1_flow</expression>
             </outVariable>
-            <block localId="26" typeName="scale_to_signed" instanceName="scale_to_signed7" height="40" width="161" executionOrderId="0">
+            <block localId="26" typeName="scale_to_signed" instanceName="scale_to_signed7" height="40" width="175" executionOrderId="0">
               <position x="231" y="2330"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -989,7 +989,7 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -1014,7 +1014,7 @@
               </connectionPointIn>
               <expression>hmi_f2_flow</expression>
             </outVariable>
-            <block localId="30" typeName="scale_to_signed" instanceName="scale_to_signed8" height="40" width="161" executionOrderId="0">
+            <block localId="30" typeName="scale_to_signed" instanceName="scale_to_signed8" height="40" width="175" executionOrderId="0">
               <position x="228" y="2403"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -1024,7 +1024,7 @@
                       <position x="228" y="2433"/>
                       <position x="215" y="2433"/>
                       <position x="215" y="2437"/>
-                      <position x="184" y="2437"/>
+                      <position x="185" y="2437"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1033,15 +1033,15 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="32" height="27" width="89" negated="false" executionOrderId="0">
+            <inVariable localId="32" height="27" width="90" negated="false" executionOrderId="0">
               <position x="95" y="2424"/>
               <connectionPointOut>
-                <relPosition x="89" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>purge_flow</expression>
             </inVariable>
@@ -1058,7 +1058,7 @@
               </connectionPointIn>
               <expression>hmi_purge_flow</expression>
             </outVariable>
-            <block localId="34" typeName="scale_to_signed" instanceName="scale_to_signed9" height="40" width="161" executionOrderId="0">
+            <block localId="34" typeName="scale_to_signed" instanceName="scale_to_signed9" height="40" width="175" executionOrderId="0">
               <position x="242" y="2480"/>
               <inputVariables>
                 <variable formalParameter="input_uint">
@@ -1068,9 +1068,9 @@
                       <position x="242" y="2510"/>
                       <position x="204" y="2510"/>
                       <position x="204" y="2518"/>
-                      <position x="226" y="2518"/>
-                      <position x="226" y="2520"/>
-                      <position x="216" y="2520"/>
+                      <position x="229" y="2518"/>
+                      <position x="229" y="2520"/>
+                      <position x="219" y="2520"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1079,53 +1079,53 @@
               <outputVariables>
                 <variable formalParameter="output_int">
                   <connectionPointOut>
-                    <relPosition x="161" y="30"/>
+                    <relPosition x="175" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="35" height="27" width="103" negated="false" executionOrderId="0">
+            <inVariable localId="35" height="27" width="106" negated="false" executionOrderId="0">
               <position x="113" y="2507"/>
               <connectionPointOut>
-                <relPosition x="103" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>product_flow</expression>
             </inVariable>
-            <outVariable localId="36" height="27" width="136" negated="false" executionOrderId="0">
+            <outVariable localId="36" height="27" width="138" negated="false" executionOrderId="0">
               <position x="463" y="2487"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="34" formalParameter="output_int">
                   <position x="463" y="2500"/>
-                  <position x="413" y="2500"/>
-                  <position x="413" y="2510"/>
-                  <position x="403" y="2510"/>
+                  <position x="427" y="2500"/>
+                  <position x="427" y="2510"/>
+                  <position x="417" y="2510"/>
                 </connection>
               </connectionPointIn>
               <expression>hmi_product_flow</expression>
             </outVariable>
-            <inVariable localId="64" height="27" width="99" negated="false">
+            <inVariable localId="64" height="27" width="106" negated="false">
               <position x="116" y="235"/>
               <connectionPointOut>
-                <relPosition x="99" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>f1_valve_pos</expression>
             </inVariable>
-            <inVariable localId="65" height="27" width="99" negated="false">
+            <inVariable localId="65" height="27" width="106" negated="false">
               <position x="168" y="703"/>
               <connectionPointOut>
-                <relPosition x="99" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>f2_valve_pos</expression>
             </inVariable>
-            <inVariable localId="66" height="27" width="126" negated="false">
+            <inVariable localId="66" height="27" width="130" negated="false">
               <position x="237" y="521"/>
               <connectionPointOut>
-                <relPosition x="126" y="13"/>
+                <relPosition x="130" y="13"/>
               </connectionPointOut>
               <expression>purge_valve_pos</expression>
             </inVariable>
-            <outVariable localId="67" height="27" width="117" negated="false">
+            <outVariable localId="67" height="27" width="122" negated="false">
               <position x="656" y="420"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -1133,12 +1133,12 @@
                   <position x="656" y="433"/>
                   <position x="645" y="433"/>
                   <position x="645" y="451"/>
-                  <position x="614" y="451"/>
+                  <position x="623" y="451"/>
                 </connection>
               </connectionPointIn>
               <expression>purge_valve_sp</expression>
             </outVariable>
-            <block localId="72" typeName="pressure_override" instanceName="pressure_override0" height="80" width="174">
+            <block localId="72" typeName="pressure_override" instanceName="pressure_override0" height="80" width="183">
               <position x="352" y="778"/>
               <inputVariables>
                 <variable formalParameter="pressure">
@@ -1148,7 +1148,7 @@
                       <position x="352" y="808"/>
                       <position x="277" y="808"/>
                       <position x="277" y="805"/>
-                      <position x="234" y="805"/>
+                      <position x="238" y="805"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1159,7 +1159,7 @@
                       <position x="352" y="828"/>
                       <position x="276" y="828"/>
                       <position x="276" y="863"/>
-                      <position x="232" y="863"/>
+                      <position x="237" y="863"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1170,7 +1170,7 @@
                       <position x="352" y="848"/>
                       <position x="315" y="848"/>
                       <position x="315" y="916"/>
-                      <position x="279" y="916"/>
+                      <position x="286" y="916"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1179,33 +1179,33 @@
               <outputVariables>
                 <variable formalParameter="product_sp">
                   <connectionPointOut>
-                    <relPosition x="174" y="30"/>
+                    <relPosition x="183" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="73" height="27" width="70" negated="false">
+            <inVariable localId="73" height="27" width="74" negated="false">
               <position x="164" y="792"/>
               <connectionPointOut>
-                <relPosition x="70" y="13"/>
+                <relPosition x="74" y="13"/>
               </connectionPointOut>
               <expression>pressure</expression>
             </inVariable>
-            <inVariable localId="74" height="27" width="69" negated="false">
+            <inVariable localId="74" height="27" width="74" negated="false">
               <position x="163" y="850"/>
               <connectionPointOut>
-                <relPosition x="69" y="13"/>
+                <relPosition x="74" y="13"/>
               </connectionPointOut>
               <expression>flow_set</expression>
             </inVariable>
-            <inVariable localId="75" height="27" width="91" negated="false">
+            <inVariable localId="75" height="27" width="98" negated="false">
               <position x="188" y="903"/>
               <connectionPointOut>
-                <relPosition x="91" y="13"/>
+                <relPosition x="98" y="13"/>
               </connectionPointOut>
               <expression>override_sp</expression>
             </inVariable>
-            <outVariable localId="76" height="27" width="69" negated="false">
+            <outVariable localId="76" height="27" width="74" negated="false">
               <position x="626" y="789"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -1213,12 +1213,12 @@
                   <position x="626" y="802"/>
                   <position x="575" y="802"/>
                   <position x="575" y="808"/>
-                  <position x="526" y="808"/>
+                  <position x="535" y="808"/>
                 </connection>
               </connectionPointIn>
               <expression>flow_set</expression>
             </outVariable>
-            <block localId="77" typeName="level_control" instanceName="level_control0" height="80" width="154">
+            <block localId="77" typeName="level_control" instanceName="level_control0" height="80" width="167">
               <position x="370" y="968"/>
               <inputVariables>
                 <variable formalParameter="liquid_level">
@@ -1228,7 +1228,7 @@
                       <position x="370" y="998"/>
                       <position x="305" y="998"/>
                       <position x="305" y="993"/>
-                      <position x="240" y="993"/>
+                      <position x="248" y="993"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1239,7 +1239,7 @@
                       <position x="370" y="1018"/>
                       <position x="295" y="1018"/>
                       <position x="295" y="1050"/>
-                      <position x="240" y="1050"/>
+                      <position x="268" y="1050"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1250,7 +1250,7 @@
                       <position x="370" y="1038"/>
                       <position x="339" y="1038"/>
                       <position x="339" y="1097"/>
-                      <position x="309" y="1097"/>
+                      <position x="315" y="1097"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1259,33 +1259,33 @@
               <outputVariables>
                 <variable formalParameter="new_pos">
                   <connectionPointOut>
-                    <relPosition x="154" y="30"/>
+                    <relPosition x="167" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="78" height="27" width="42" negated="false">
+            <inVariable localId="78" height="27" width="50" negated="false">
               <position x="198" y="980"/>
               <connectionPointOut>
-                <relPosition x="42" y="13"/>
+                <relPosition x="50" y="13"/>
               </connectionPointOut>
               <expression>level</expression>
             </inVariable>
-            <inVariable localId="79" height="27" width="65" negated="false">
+            <inVariable localId="79" height="27" width="74" negated="false">
               <position x="194" y="1037"/>
               <connectionPointOut>
-                <relPosition x="65" y="13"/>
+                <relPosition x="74" y="13"/>
               </connectionPointOut>
               <expression>level_sp</expression>
             </inVariable>
-            <inVariable localId="80" height="27" width="140" negated="false">
+            <inVariable localId="80" height="27" width="146" negated="false">
               <position x="169" y="1084"/>
               <connectionPointOut>
-                <relPosition x="140" y="13"/>
+                <relPosition x="146" y="13"/>
               </connectionPointOut>
               <expression>product_valve_pos</expression>
             </inVariable>
-            <outVariable localId="81" height="27" width="131" negated="false">
+            <outVariable localId="81" height="27" width="138" negated="false">
               <position x="592" y="979"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -1293,7 +1293,7 @@
                   <position x="592" y="992"/>
                   <position x="558" y="992"/>
                   <position x="558" y="998"/>
-                  <position x="524" y="998"/>
+                  <position x="537" y="998"/>
                 </connection>
               </connectionPointIn>
               <expression>product_valve_sp</expression>
@@ -1339,10 +1339,10 @@
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="88" height="27" width="88" negated="false">
+            <inVariable localId="88" height="27" width="90" negated="false">
               <position x="109" y="2584"/>
               <connectionPointOut>
-                <relPosition x="88" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>scan_count</expression>
             </inVariable>
@@ -1353,7 +1353,7 @@
               </connectionPointOut>
               <expression>1</expression>
             </inVariable>
-            <outVariable localId="90" height="27" width="88" negated="false">
+            <outVariable localId="90" height="27" width="90" negated="false">
               <position x="373" y="2582"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -1401,10 +1401,10 @@
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="37" height="27" width="88" negated="false" executionOrderId="0">
+            <inVariable localId="37" height="27" width="90" negated="false" executionOrderId="0">
               <position x="87" y="2703"/>
               <connectionPointOut>
-                <relPosition x="88" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>scan_count</expression>
             </inVariable>
@@ -1462,7 +1462,7 @@
               </connectionPointOut>
               <expression>0</expression>
             </inVariable>
-            <outVariable localId="41" height="27" width="88" negated="false" executionOrderId="0">
+            <outVariable localId="41" height="27" width="90" negated="false" executionOrderId="0">
               <position x="497" y="2750"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -1672,7 +1672,7 @@
                 <relPosition x="3" y="300"/>
               </connectionPointOut>
             </leftPowerRail>
-            <block localId="37" typeName="scale_to_real" instanceName="scale_to_real5" height="120" width="205" executionOrderId="0">
+            <block localId="37" typeName="scale_to_real" instanceName="scale_to_real5" height="120" width="223" executionOrderId="0">
               <position x="206" y="19"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -1682,7 +1682,7 @@
                       <position x="206" y="55"/>
                       <position x="173" y="55"/>
                       <position x="173" y="30"/>
-                      <position x="140" y="30"/>
+                      <position x="144" y="30"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1704,7 +1704,7 @@
                       <position x="206" y="121"/>
                       <position x="173" y="121"/>
                       <position x="173" y="136"/>
-                      <position x="128" y="136"/>
+                      <position x="131" y="136"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1713,7 +1713,7 @@
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="36"/>
+                    <relPosition x="223" y="36"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -1725,34 +1725,34 @@
               </connectionPointOut>
               <expression>pressure_max</expression>
             </inVariable>
-            <inVariable localId="40" height="27" width="103" negated="false" executionOrderId="0">
+            <inVariable localId="40" height="27" width="106" negated="false" executionOrderId="0">
               <position x="25" y="123"/>
               <connectionPointOut>
-                <relPosition x="103" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>pressure_min</expression>
             </inVariable>
-            <inVariable localId="41" height="27" width="70" negated="false">
+            <inVariable localId="41" height="27" width="74" negated="false">
               <position x="70" y="17"/>
               <connectionPointOut>
-                <relPosition x="70" y="13"/>
+                <relPosition x="74" y="13"/>
               </connectionPointOut>
               <expression>pressure</expression>
             </inVariable>
-            <outVariable localId="42" height="27" width="103" negated="false">
+            <outVariable localId="42" height="27" width="114" negated="false">
               <position x="453" y="28"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="37" formalParameter="scaled_real">
                   <position x="453" y="41"/>
-                  <position x="427" y="41"/>
-                  <position x="427" y="55"/>
-                  <position x="411" y="55"/>
+                  <position x="439" y="41"/>
+                  <position x="439" y="55"/>
+                  <position x="429" y="55"/>
                 </connection>
               </connectionPointIn>
               <expression>pressure_real</expression>
             </outVariable>
-            <block localId="23" typeName="scale_to_real" instanceName="scale_to_real4" height="120" width="205" executionOrderId="0">
+            <block localId="23" typeName="scale_to_real" instanceName="scale_to_real4" height="120" width="223" executionOrderId="0">
               <position x="216" y="160"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -1762,7 +1762,7 @@
                       <position x="216" y="196"/>
                       <position x="173" y="196"/>
                       <position x="173" y="200"/>
-                      <position x="131" y="200"/>
+                      <position x="136" y="200"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1784,7 +1784,7 @@
                       <position x="216" y="262"/>
                       <position x="180" y="262"/>
                       <position x="180" y="271"/>
-                      <position x="145" y="271"/>
+                      <position x="148" y="271"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1793,7 +1793,7 @@
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="36"/>
+                    <relPosition x="223" y="36"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -1805,21 +1805,21 @@
               </connectionPointOut>
               <expression>pressure_max</expression>
             </inVariable>
-            <inVariable localId="32" height="27" width="103" negated="false" executionOrderId="0">
+            <inVariable localId="32" height="27" width="106" negated="false" executionOrderId="0">
               <position x="42" y="258"/>
               <connectionPointOut>
-                <relPosition x="103" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>pressure_min</expression>
             </inVariable>
-            <inVariable localId="43" height="27" width="93" negated="false">
+            <inVariable localId="43" height="27" width="98" negated="false">
               <position x="38" y="187"/>
               <connectionPointOut>
-                <relPosition x="93" y="13"/>
+                <relPosition x="98" y="13"/>
               </connectionPointOut>
               <expression>pressure_sp</expression>
             </inVariable>
-            <outVariable localId="44" height="27" width="126" negated="false">
+            <outVariable localId="44" height="27" width="138" negated="false">
               <position x="467" y="173"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -1827,12 +1827,12 @@
                   <position x="467" y="186"/>
                   <position x="450" y="186"/>
                   <position x="450" y="196"/>
-                  <position x="421" y="196"/>
+                  <position x="439" y="196"/>
                 </connection>
               </connectionPointIn>
               <expression>pressure_sp_real</expression>
             </outVariable>
-            <block localId="45" typeName="scale_to_uint" instanceName="scale_to_uint0" height="40" width="120">
+            <block localId="45" typeName="scale_to_uint" instanceName="scale_to_uint0" height="40" width="135">
               <position x="534" y="820"/>
               <inputVariables>
                 <variable formalParameter="real_in">
@@ -1851,12 +1851,12 @@
               <outputVariables>
                 <variable formalParameter="uint_out">
                   <connectionPointOut>
-                    <relPosition x="120" y="30"/>
+                    <relPosition x="135" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <outVariable localId="47" height="27" width="78" negated="false">
+            <outVariable localId="47" height="27" width="82" negated="false">
               <position x="701" y="813"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -1864,19 +1864,19 @@
                   <position x="701" y="826"/>
                   <position x="680" y="826"/>
                   <position x="680" y="850"/>
-                  <position x="654" y="850"/>
+                  <position x="669" y="850"/>
                 </connection>
               </connectionPointIn>
               <expression>valve_pos</expression>
             </outVariable>
-            <inVariable localId="49" height="27" width="70" negated="false">
+            <inVariable localId="49" height="27" width="74" negated="false">
               <position x="147" y="672"/>
               <connectionPointOut>
-                <relPosition x="70" y="13"/>
+                <relPosition x="74" y="13"/>
               </connectionPointOut>
               <expression>curr_pos</expression>
             </inVariable>
-            <block localId="50" typeName="scale_to_real" instanceName="scale_to_real0" height="80" width="205">
+            <block localId="50" typeName="scale_to_real" instanceName="scale_to_real0" height="80" width="223">
               <position x="346" y="639"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -1886,7 +1886,7 @@
                       <position x="346" y="669"/>
                       <position x="322" y="669"/>
                       <position x="322" y="685"/>
-                      <position x="217" y="685"/>
+                      <position x="221" y="685"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -1917,7 +1917,7 @@
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="30"/>
+                    <relPosition x="223" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -1936,7 +1936,7 @@
               </connectionPointOut>
               <expression>pos_min</expression>
             </inVariable>
-            <outVariable localId="52" height="27" width="111" negated="false">
+            <outVariable localId="52" height="27" width="122" negated="false">
               <position x="656" y="625"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -1944,7 +1944,7 @@
                   <position x="656" y="638"/>
                   <position x="634" y="638"/>
                   <position x="634" y="669"/>
-                  <position x="551" y="669"/>
+                  <position x="569" y="669"/>
                 </connection>
               </connectionPointIn>
               <expression>valve_pos_real</expression>
@@ -1984,17 +1984,17 @@
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="54" height="27" width="111" negated="false">
+            <inVariable localId="54" height="27" width="122" negated="false">
               <position x="27" y="821"/>
               <connectionPointOut>
-                <relPosition x="111" y="13"/>
+                <relPosition x="122" y="13"/>
               </connectionPointOut>
               <expression>valve_pos_real</expression>
             </inVariable>
-            <inVariable localId="10" height="27" width="124" negated="false" executionOrderId="0">
+            <inVariable localId="10" height="27" width="130" negated="false" executionOrderId="0">
               <position x="27" y="868"/>
               <connectionPointOut>
-                <relPosition x="124" y="13"/>
+                <relPosition x="130" y="13"/>
               </connectionPointOut>
               <expression>pos_update_real</expression>
             </inVariable>
@@ -2093,17 +2093,17 @@
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="58" height="27" width="126" negated="false">
+            <inVariable localId="58" height="27" width="138" negated="false">
               <position x="188" y="406"/>
               <connectionPointOut>
-                <relPosition x="126" y="13"/>
+                <relPosition x="138" y="13"/>
               </connectionPointOut>
               <expression>pressure_sp_real</expression>
             </inVariable>
-            <inVariable localId="59" height="27" width="103" negated="false">
+            <inVariable localId="59" height="27" width="114" negated="false">
               <position x="182" y="464"/>
               <connectionPointOut>
-                <relPosition x="103" y="13"/>
+                <relPosition x="114" y="13"/>
               </connectionPointOut>
               <expression>pressure_real</expression>
             </inVariable>
@@ -2142,14 +2142,14 @@
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="61" height="27" width="85" negated="false">
+            <inVariable localId="61" height="27" width="90" negated="false">
               <position x="465" y="508"/>
               <connectionPointOut>
-                <relPosition x="85" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>pressure_k</expression>
             </inVariable>
-            <outVariable localId="62" height="27" width="124" negated="false">
+            <outVariable localId="62" height="27" width="130" negated="false">
               <position x="702" y="459"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -2352,14 +2352,14 @@
                 <relPosition x="3" y="695"/>
               </connectionPointOut>
             </leftPowerRail>
-            <inVariable localId="4" height="27" width="102" negated="false">
+            <inVariable localId="4" height="27" width="114" negated="false">
               <position x="79" y="390"/>
               <connectionPointOut>
-                <relPosition x="102" y="13"/>
+                <relPosition x="114" y="13"/>
               </connectionPointOut>
               <expression>flow_set_real</expression>
             </inVariable>
-            <outVariable localId="9" height="27" width="124" negated="false">
+            <outVariable localId="9" height="27" width="130" negated="false">
               <position x="841" y="368"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -2372,26 +2372,26 @@
               </connectionPointIn>
               <expression>pos_update_real</expression>
             </outVariable>
-            <block localId="11" typeName="scale_to_real" instanceName="scale_to_real0" height="120" width="205" executionOrderId="0">
+            <block localId="11" typeName="scale_to_real" instanceName="scale_to_real0" height="120" width="223" executionOrderId="0">
               <position x="260" y="19"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
                   <connectionPointIn>
-                    <relPosition x="0" y="30"/>
+                    <relPosition x="0" y="36"/>
                     <connection refLocalId="5">
-                      <position x="260" y="49"/>
-                      <position x="227" y="49"/>
+                      <position x="260" y="55"/>
+                      <position x="227" y="55"/>
                       <position x="227" y="16"/>
-                      <position x="194" y="16"/>
+                      <position x="197" y="16"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
                 <variable formalParameter="real_max">
                   <connectionPointIn>
-                    <relPosition x="0" y="50"/>
+                    <relPosition x="0" y="69"/>
                     <connection refLocalId="12">
-                      <position x="260" y="69"/>
-                      <position x="206" y="69"/>
+                      <position x="260" y="88"/>
+                      <position x="206" y="88"/>
                       <position x="206" y="47"/>
                       <position x="151" y="47"/>
                     </connection>
@@ -2399,34 +2399,12 @@
                 </variable>
                 <variable formalParameter="real_min">
                   <connectionPointIn>
-                    <relPosition x="0" y="70"/>
+                    <relPosition x="0" y="102"/>
                     <connection refLocalId="10">
-                      <position x="260" y="89"/>
-                      <position x="203" y="89"/>
+                      <position x="260" y="121"/>
+                      <position x="203" y="121"/>
                       <position x="203" y="80"/>
                       <position x="146" y="80"/>
-                    </connection>
-                  </connectionPointIn>
-                </variable>
-                <variable formalParameter="raw_max">
-                  <connectionPointIn>
-                    <relPosition x="0" y="90"/>
-                    <connection refLocalId="13">
-                      <position x="260" y="109"/>
-                      <position x="211" y="109"/>
-                      <position x="211" y="108"/>
-                      <position x="162" y="108"/>
-                    </connection>
-                  </connectionPointIn>
-                </variable>
-                <variable formalParameter="raw_min">
-                  <connectionPointIn>
-                    <relPosition x="0" y="110"/>
-                    <connection refLocalId="14">
-                      <position x="260" y="129"/>
-                      <position x="213" y="129"/>
-                      <position x="213" y="146"/>
-                      <position x="167" y="146"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -2435,7 +2413,7 @@
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="30"/>
+                    <relPosition x="223" y="36"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -2454,34 +2432,34 @@
               </connectionPointOut>
               <expression>flow_min</expression>
             </inVariable>
-            <inVariable localId="5" height="27" width="103" negated="false" executionOrderId="0">
+            <inVariable localId="5" height="27" width="106" negated="false" executionOrderId="0">
               <position x="91" y="3"/>
               <connectionPointOut>
-                <relPosition x="103" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>product_flow</expression>
             </inVariable>
-            <outVariable localId="15" height="27" width="136" negated="false">
+            <outVariable localId="15" height="27" width="146" negated="false">
               <position x="501" y="41"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="11" formalParameter="scaled_real">
                   <position x="501" y="54"/>
-                  <position x="491" y="54"/>
-                  <position x="491" y="49"/>
-                  <position x="465" y="49"/>
+                  <position x="493" y="54"/>
+                  <position x="493" y="55"/>
+                  <position x="483" y="55"/>
                 </connection>
               </connectionPointIn>
               <expression>product_flow_real</expression>
             </outVariable>
-            <inVariable localId="16" height="27" width="136" negated="false">
+            <inVariable localId="16" height="27" width="146" negated="false">
               <position x="57" y="447"/>
               <connectionPointOut>
-                <relPosition x="136" y="13"/>
+                <relPosition x="146" y="13"/>
               </connectionPointOut>
               <expression>product_flow_real</expression>
             </inVariable>
-            <block localId="2" typeName="scale_to_real" instanceName="scale_to_real1" height="120" width="205" executionOrderId="0">
+            <block localId="2" typeName="scale_to_real" instanceName="scale_to_real1" height="120" width="223" executionOrderId="0">
               <position x="253" y="165"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -2493,7 +2471,7 @@
                       <position x="230" y="195"/>
                       <position x="245" y="195"/>
                       <position x="245" y="173"/>
-                      <position x="144" y="173"/>
+                      <position x="153" y="173"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -2524,7 +2502,7 @@
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="36"/>
+                    <relPosition x="223" y="36"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -2543,27 +2521,27 @@
               </connectionPointOut>
               <expression>flow_min</expression>
             </inVariable>
-            <inVariable localId="25" height="27" width="89" negated="false">
+            <inVariable localId="25" height="27" width="98" negated="false">
               <position x="55" y="160"/>
               <connectionPointOut>
-                <relPosition x="89" y="13"/>
+                <relPosition x="98" y="13"/>
               </connectionPointOut>
               <expression>flow_set_in</expression>
             </inVariable>
-            <outVariable localId="26" height="27" width="102" negated="false">
+            <outVariable localId="26" height="27" width="114" negated="false">
               <position x="505" y="195"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="2" formalParameter="scaled_real">
                   <position x="505" y="208"/>
-                  <position x="481" y="208"/>
-                  <position x="481" y="197"/>
-                  <position x="458" y="197"/>
+                  <position x="486" y="208"/>
+                  <position x="486" y="201"/>
+                  <position x="476" y="201"/>
                 </connection>
               </connectionPointIn>
               <expression>flow_set_real</expression>
             </outVariable>
-            <block localId="28" typeName="scale_to_real" instanceName="scale_to_real2" height="80" width="205">
+            <block localId="28" typeName="scale_to_real" instanceName="scale_to_real2" height="80" width="223">
               <position x="260" y="628"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -2573,7 +2551,7 @@
                       <position x="260" y="658"/>
                       <position x="236" y="658"/>
                       <position x="236" y="633"/>
-                      <position x="161" y="633"/>
+                      <position x="165" y="633"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -2604,15 +2582,15 @@
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="30"/>
+                    <relPosition x="223" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="29" height="27" width="70" negated="false">
+            <inVariable localId="29" height="27" width="74" negated="false">
               <position x="91" y="620"/>
               <connectionPointOut>
-                <relPosition x="70" y="13"/>
+                <relPosition x="74" y="13"/>
               </connectionPointOut>
               <expression>curr_pos</expression>
             </inVariable>
@@ -2630,34 +2608,34 @@
               </connectionPointOut>
               <expression>pos_max</expression>
             </inVariable>
-            <outVariable localId="32" height="27" width="103" negated="false">
+            <outVariable localId="32" height="27" width="114" negated="false">
               <position x="506" y="670"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="28" formalParameter="scaled_real">
                   <position x="506" y="683"/>
-                  <position x="482" y="683"/>
-                  <position x="482" y="658"/>
-                  <position x="465" y="658"/>
+                  <position x="493" y="683"/>
+                  <position x="493" y="658"/>
+                  <position x="483" y="658"/>
                 </connection>
               </connectionPointIn>
               <expression>curr_pos_real</expression>
             </outVariable>
-            <inVariable localId="34" height="27" width="103" negated="false">
+            <inVariable localId="34" height="27" width="114" negated="false">
               <position x="36" y="777"/>
               <connectionPointOut>
-                <relPosition x="103" y="13"/>
+                <relPosition x="114" y="13"/>
               </connectionPointOut>
               <expression>curr_pos_real</expression>
             </inVariable>
-            <inVariable localId="35" height="27" width="124" negated="false">
+            <inVariable localId="35" height="27" width="130" negated="false">
               <position x="37" y="853"/>
               <connectionPointOut>
-                <relPosition x="124" y="13"/>
+                <relPosition x="130" y="13"/>
               </connectionPointOut>
               <expression>pos_update_real</expression>
             </inVariable>
-            <block localId="36" typeName="scale_to_uint" instanceName="scale_to_uint0" height="40" width="120">
+            <block localId="36" typeName="scale_to_uint" instanceName="scale_to_uint0" height="40" width="135">
               <position x="453" y="787"/>
               <inputVariables>
                 <variable formalParameter="real_in">
@@ -2676,7 +2654,7 @@
               <outputVariables>
                 <variable formalParameter="uint_out">
                   <connectionPointOut>
-                    <relPosition x="120" y="30"/>
+                    <relPosition x="135" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -2754,10 +2732,10 @@
               </connectionPointOut>
               <expression>pos_min</expression>
             </inVariable>
-            <inVariable localId="54" height="27" width="56" negated="false">
+            <inVariable localId="54" height="27" width="58" negated="false">
               <position x="427" y="453"/>
               <connectionPointOut>
-                <relPosition x="56" y="13"/>
+                <relPosition x="58" y="13"/>
               </connectionPointOut>
               <expression>flow_k</expression>
             </inVariable>
@@ -3058,28 +3036,28 @@
                 <relPosition x="3" y="180"/>
               </connectionPointOut>
             </leftPowerRail>
-            <inVariable localId="3" height="27" width="119" negated="false">
+            <inVariable localId="3" height="27" width="130" negated="false">
               <position x="96" y="361"/>
               <connectionPointOut>
-                <relPosition x="119" y="13"/>
+                <relPosition x="130" y="13"/>
               </connectionPointOut>
               <expression>a_in_purge_real</expression>
             </inVariable>
-            <inVariable localId="4" height="27" width="116" negated="false">
+            <inVariable localId="4" height="27" width="130" negated="false">
               <position x="68" y="317"/>
               <connectionPointOut>
-                <relPosition x="116" y="13"/>
+                <relPosition x="130" y="13"/>
               </connectionPointOut>
               <expression>a_setpoint_real</expression>
             </inVariable>
-            <inVariable localId="5" height="27" width="111" negated="false">
+            <inVariable localId="5" height="27" width="114" negated="false">
               <position x="342" y="406"/>
               <connectionPointOut>
-                <relPosition x="111" y="13"/>
+                <relPosition x="114" y="13"/>
               </connectionPointOut>
               <expression>composition_k</expression>
             </inVariable>
-            <outVariable localId="8" height="27" width="124" negated="false">
+            <outVariable localId="8" height="27" width="130" negated="false">
               <position x="760" y="349"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -3092,7 +3070,7 @@
               </connectionPointIn>
               <expression>pos_update_real</expression>
             </outVariable>
-            <block localId="26" typeName="scale_to_real" instanceName="scale_to_real3" height="120" width="205" executionOrderId="0">
+            <block localId="26" typeName="scale_to_real" instanceName="scale_to_real3" height="120" width="223" executionOrderId="0">
               <position x="234" y="19"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -3102,7 +3080,7 @@
                       <position x="234" y="55"/>
                       <position x="212" y="55"/>
                       <position x="212" y="51"/>
-                      <position x="191" y="51"/>
+                      <position x="195" y="51"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -3133,7 +3111,7 @@
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="36"/>
+                    <relPosition x="223" y="36"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -3152,27 +3130,27 @@
               </connectionPointOut>
               <expression>comp_min</expression>
             </inVariable>
-            <inVariable localId="30" height="27" width="86" negated="false">
+            <inVariable localId="30" height="27" width="90" negated="false">
               <position x="105" y="38"/>
               <connectionPointOut>
-                <relPosition x="86" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>a_in_purge</expression>
             </inVariable>
-            <outVariable localId="31" height="27" width="119" negated="false">
+            <outVariable localId="31" height="27" width="130" negated="false">
               <position x="486" y="25"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="26" formalParameter="scaled_real">
                   <position x="486" y="38"/>
-                  <position x="463" y="38"/>
-                  <position x="463" y="55"/>
-                  <position x="439" y="55"/>
+                  <position x="467" y="38"/>
+                  <position x="467" y="55"/>
+                  <position x="457" y="55"/>
                 </connection>
               </connectionPointIn>
               <expression>a_in_purge_real</expression>
             </outVariable>
-            <block localId="16" typeName="scale_to_real" instanceName="scale_to_real2" height="120" width="205" executionOrderId="0">
+            <block localId="16" typeName="scale_to_real" instanceName="scale_to_real2" height="120" width="223" executionOrderId="0">
               <position x="239" y="163"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -3182,7 +3160,7 @@
                       <position x="239" y="199"/>
                       <position x="216" y="199"/>
                       <position x="216" y="193"/>
-                      <position x="193" y="193"/>
+                      <position x="200" y="193"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -3213,7 +3191,7 @@
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="36"/>
+                    <relPosition x="223" y="36"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -3232,27 +3210,29 @@
               </connectionPointOut>
               <expression>comp_min</expression>
             </inVariable>
-            <inVariable localId="32" height="27" width="83" negated="false">
+            <inVariable localId="32" height="27" width="90" negated="false">
               <position x="110" y="180"/>
               <connectionPointOut>
-                <relPosition x="83" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>a_setpoint</expression>
             </inVariable>
-            <outVariable localId="33" height="27" width="116" negated="false">
+            <outVariable localId="33" height="27" width="130" negated="false">
               <position x="473" y="170"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="16" formalParameter="scaled_real">
                   <position x="473" y="183"/>
                   <position x="463" y="183"/>
-                  <position x="463" y="199"/>
-                  <position x="444" y="199"/>
+                  <position x="463" y="191"/>
+                  <position x="472" y="191"/>
+                  <position x="472" y="199"/>
+                  <position x="462" y="199"/>
                 </connection>
               </connectionPointIn>
               <expression>a_setpoint_real</expression>
             </outVariable>
-            <block localId="34" typeName="scale_to_uint" instanceName="scale_to_uint0" height="40" width="120">
+            <block localId="34" typeName="scale_to_uint" instanceName="scale_to_uint0" height="40" width="135">
               <position x="525" y="646"/>
               <inputVariables>
                 <variable formalParameter="real_in">
@@ -3271,7 +3251,7 @@
               <outputVariables>
                 <variable formalParameter="uint_out">
                   <connectionPointOut>
-                    <relPosition x="120" y="30"/>
+                    <relPosition x="135" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -3289,7 +3269,7 @@
               </connectionPointIn>
               <expression>new_pos</expression>
             </outVariable>
-            <block localId="38" typeName="scale_to_real" instanceName="scale_to_real0" height="80" width="205">
+            <block localId="38" typeName="scale_to_real" instanceName="scale_to_real0" height="80" width="223">
               <position x="283" y="547"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -3297,7 +3277,7 @@
                     <relPosition x="0" y="30"/>
                     <connection refLocalId="39">
                       <position x="283" y="577"/>
-                      <position x="171" y="577"/>
+                      <position x="175" y="577"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -3328,15 +3308,15 @@
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="30"/>
+                    <relPosition x="223" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="39" height="27" width="70" negated="false">
+            <inVariable localId="39" height="27" width="74" negated="false">
               <position x="101" y="564"/>
               <connectionPointOut>
-                <relPosition x="70" y="13"/>
+                <relPosition x="74" y="13"/>
               </connectionPointOut>
               <expression>curr_pos</expression>
             </inVariable>
@@ -3354,15 +3334,15 @@
               </connectionPointOut>
               <expression>pos_min</expression>
             </inVariable>
-            <outVariable localId="41" height="27" width="111" negated="false">
+            <outVariable localId="41" height="27" width="122" negated="false">
               <position x="537" y="571"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="38" formalParameter="scaled_real">
                   <position x="537" y="584"/>
-                  <position x="512" y="584"/>
-                  <position x="512" y="577"/>
-                  <position x="488" y="577"/>
+                  <position x="516" y="584"/>
+                  <position x="516" y="577"/>
+                  <position x="506" y="577"/>
                 </connection>
               </connectionPointIn>
               <expression>valve_pos_real</expression>
@@ -3402,17 +3382,17 @@
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="43" height="27" width="111" negated="false">
+            <inVariable localId="43" height="27" width="122" negated="false">
               <position x="92" y="694"/>
               <connectionPointOut>
-                <relPosition x="111" y="13"/>
+                <relPosition x="122" y="13"/>
               </connectionPointOut>
               <expression>valve_pos_real</expression>
             </inVariable>
-            <inVariable localId="10" height="27" width="124" negated="false" executionOrderId="0">
+            <inVariable localId="10" height="27" width="130" negated="false" executionOrderId="0">
               <position x="88" y="735"/>
               <connectionPointOut>
-                <relPosition x="124" y="13"/>
+                <relPosition x="130" y="13"/>
               </connectionPointOut>
               <expression>pos_update_real</expression>
             </inVariable>
@@ -4429,10 +4409,10 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="4" height="27" width="82" negated="false">
+            <inVariable localId="4" height="27" width="90" negated="false">
               <position x="23" y="37"/>
               <connectionPointOut>
-                <relPosition x="82" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>input_uint</expression>
             </inVariable>
@@ -4443,7 +4423,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               </connectionPointOut>
               <expression>2</expression>
             </inVariable>
-            <outVariable localId="7" height="27" width="84" negated="false">
+            <outVariable localId="7" height="27" width="90" negated="false">
               <position x="519" y="95"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -4809,14 +4789,14 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
                 <relPosition x="3" y="20"/>
               </connectionPointOut>
             </leftPowerRail>
-            <inVariable localId="4" height="27" width="88" negated="false">
+            <inVariable localId="4" height="27" width="106" negated="false">
               <position x="83" y="42"/>
               <connectionPointOut>
-                <relPosition x="88" y="13"/>
+                <relPosition x="106" y="13"/>
               </connectionPointOut>
               <expression>liquid_level</expression>
             </inVariable>
-            <block localId="5" typeName="scale_to_real" instanceName="scale_to_real0" height="80" width="205">
+            <block localId="5" typeName="scale_to_real" instanceName="scale_to_real0" height="80" width="223">
               <position x="265" y="34"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -4826,7 +4806,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
                       <position x="265" y="64"/>
                       <position x="243" y="64"/>
                       <position x="243" y="55"/>
-                      <position x="171" y="55"/>
+                      <position x="189" y="55"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -4837,7 +4817,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
                       <position x="265" y="84"/>
                       <position x="212" y="84"/>
                       <position x="212" y="97"/>
-                      <position x="155" y="97"/>
+                      <position x="159" y="97"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -4848,7 +4828,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
                       <position x="265" y="104"/>
                       <position x="220" y="104"/>
                       <position x="220" y="141"/>
-                      <position x="142" y="141"/>
+                      <position x="149" y="141"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -4857,34 +4837,34 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="30"/>
+                    <relPosition x="223" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="6" height="27" width="78" negated="false">
+            <inVariable localId="6" height="27" width="82" negated="false">
               <position x="77" y="84"/>
               <connectionPointOut>
-                <relPosition x="78" y="13"/>
+                <relPosition x="82" y="13"/>
               </connectionPointOut>
               <expression>level_max</expression>
             </inVariable>
-            <inVariable localId="7" height="27" width="75" negated="false">
+            <inVariable localId="7" height="27" width="82" negated="false">
               <position x="67" y="128"/>
               <connectionPointOut>
-                <relPosition x="75" y="13"/>
+                <relPosition x="82" y="13"/>
               </connectionPointOut>
               <expression>level_min</expression>
             </inVariable>
-            <outVariable localId="8" height="27" width="75" negated="false">
+            <outVariable localId="8" height="27" width="90" negated="false">
               <position x="517" y="47"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
                 <connection refLocalId="5" formalParameter="scaled_real">
                   <position x="517" y="60"/>
-                  <position x="493" y="60"/>
-                  <position x="493" y="64"/>
-                  <position x="470" y="64"/>
+                  <position x="498" y="60"/>
+                  <position x="498" y="64"/>
+                  <position x="488" y="64"/>
                 </connection>
               </connectionPointIn>
               <expression>level_real</expression>
@@ -4896,7 +4876,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               </connectionPointOut>
               <expression>curr_pos</expression>
             </inVariable>
-            <block localId="9" typeName="scale_to_real" instanceName="scale_to_real1" height="80" width="205" executionOrderId="0">
+            <block localId="9" typeName="scale_to_real" instanceName="scale_to_real1" height="80" width="223" executionOrderId="0">
               <position x="250" y="177"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -4937,7 +4917,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="30"/>
+                    <relPosition x="223" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -4969,10 +4949,10 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               </connectionPointOut>
               <expression>pos_min</expression>
             </inVariable>
-            <inVariable localId="13" height="27" width="75" negated="false">
+            <inVariable localId="13" height="27" width="90" negated="false">
               <position x="126" y="509"/>
               <connectionPointOut>
-                <relPosition x="75" y="13"/>
+                <relPosition x="90" y="13"/>
               </connectionPointOut>
               <expression>level_real</expression>
             </inVariable>
@@ -4983,17 +4963,17 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               </connectionPointOut>
               <expression>level_sp</expression>
             </inVariable>
-            <inVariable localId="15" height="27" width="78" negated="false" executionOrderId="0">
+            <inVariable localId="15" height="27" width="82" negated="false" executionOrderId="0">
               <position x="56" y="348"/>
               <connectionPointOut>
-                <relPosition x="78" y="13"/>
+                <relPosition x="82" y="13"/>
               </connectionPointOut>
               <expression>level_max</expression>
             </inVariable>
-            <inVariable localId="16" height="27" width="75" negated="false" executionOrderId="0">
+            <inVariable localId="16" height="27" width="82" negated="false" executionOrderId="0">
               <position x="46" y="392"/>
               <connectionPointOut>
-                <relPosition x="75" y="13"/>
+                <relPosition x="82" y="13"/>
               </connectionPointOut>
               <expression>level_min</expression>
             </inVariable>
@@ -5010,7 +4990,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               </connectionPointIn>
               <expression>sp_real</expression>
             </outVariable>
-            <block localId="18" typeName="scale_to_real" instanceName="scale_to_real2" height="80" width="205" executionOrderId="0">
+            <block localId="18" typeName="scale_to_real" instanceName="scale_to_real2" height="80" width="223" executionOrderId="0">
               <position x="244" y="298"/>
               <inputVariables>
                 <variable formalParameter="raw_input_value">
@@ -5031,7 +5011,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
                       <position x="244" y="348"/>
                       <position x="191" y="348"/>
                       <position x="191" y="361"/>
-                      <position x="134" y="361"/>
+                      <position x="138" y="361"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -5042,7 +5022,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
                       <position x="244" y="368"/>
                       <position x="199" y="368"/>
                       <position x="199" y="405"/>
-                      <position x="121" y="405"/>
+                      <position x="128" y="405"/>
                     </connection>
                   </connectionPointIn>
                 </variable>
@@ -5051,26 +5031,26 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               <outputVariables>
                 <variable formalParameter="scaled_real">
                   <connectionPointOut>
-                    <relPosition x="205" y="30"/>
+                    <relPosition x="223" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
             </block>
-            <inVariable localId="19" height="27" width="59" negated="false">
+            <inVariable localId="19" height="27" width="66" negated="false">
               <position x="144" y="454"/>
               <connectionPointOut>
-                <relPosition x="59" y="13"/>
+                <relPosition x="66" y="13"/>
               </connectionPointOut>
               <expression>sp_real</expression>
             </inVariable>
-            <inVariable localId="20" height="27" width="57" negated="false">
+            <inVariable localId="20" height="27" width="66" negated="false">
               <position x="460" y="532"/>
               <connectionPointOut>
-                <relPosition x="57" y="13"/>
+                <relPosition x="66" y="13"/>
               </connectionPointOut>
               <expression>level_k</expression>
             </inVariable>
-            <outVariable localId="21" height="27" width="124" negated="false">
+            <outVariable localId="21" height="27" width="130" negated="false">
               <position x="781" y="449"/>
               <connectionPointIn>
                 <relPosition x="0" y="13"/>
@@ -5083,17 +5063,17 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               </connectionPointIn>
               <expression>pos_update_real</expression>
             </outVariable>
-            <inVariable localId="23" height="27" width="68" negated="false">
+            <inVariable localId="23" height="27" width="74" negated="false">
               <position x="54" y="677"/>
               <connectionPointOut>
-                <relPosition x="68" y="13"/>
+                <relPosition x="74" y="13"/>
               </connectionPointOut>
               <expression>pos_real</expression>
             </inVariable>
-            <inVariable localId="24" height="27" width="124" negated="false">
+            <inVariable localId="24" height="27" width="130" negated="false">
               <position x="17" y="729"/>
               <connectionPointOut>
-                <relPosition x="124" y="13"/>
+                <relPosition x="130" y="13"/>
               </connectionPointOut>
               <expression>pos_update_real</expression>
             </inVariable>
@@ -5161,7 +5141,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               </connectionPointOut>
               <expression>pos_max</expression>
             </inVariable>
-            <block localId="28" typeName="scale_to_uint" instanceName="scale_to_uint0" height="40" width="120">
+            <block localId="28" typeName="scale_to_uint" instanceName="scale_to_uint0" height="40" width="135">
               <position x="490" y="652"/>
               <inputVariables>
                 <variable formalParameter="real_in">
@@ -5180,7 +5160,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
               <outputVariables>
                 <variable formalParameter="uint_out">
                   <connectionPointOut>
-                    <relPosition x="120" y="30"/>
+                    <relPosition x="135" y="30"/>
                   </connectionPointOut>
                 </variable>
               </outputVariables>
@@ -5316,7 +5296,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
             <pouInstance name="instance0" typeName="main"/>
           </task>
           <globalVars>
-            <variable name="run_bit" address="%QX0.0">
+            <variable name="run_bit" address="%QX100.0">
               <type>
                 <BOOL/>
               </type>
