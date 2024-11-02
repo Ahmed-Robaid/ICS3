@@ -7,7 +7,9 @@ The PLC VM is an Ubuntu 22.04 server.
 Follow the build instructions at https://github.com/thiagoralves/OpenPLC_v3 with the PLC on a NAT adapter.
 
 git clone https://github.com/thiagoralves/OpenPLC_v3.git
+
 cd OpenPLC_v3
+
 ./install.sh linux
 
 
