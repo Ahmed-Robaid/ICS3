@@ -22,9 +22,6 @@ from pymodbus.server.asynchronous import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusServerContext, ModbusSlaveContext
-from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
-import random
-from pymodbus.version import version
 
 # --------------------------------------------------------------------------- #
 # import the twisted libraries we need
@@ -37,15 +34,14 @@ from twisted.internet.task import LoopingCall
 import logging
 logging.basicConfig()
 log = logging.getLogger()
-log.setLevel(logging.DEBUG)
+log.setLevel(logging.INFO)
 
 # --------------------------------------------------------------------------- #
 # define your callback process
 # --------------------------------------------------------------------------- #
 
-
 def updating_writer(a):
-    print('updating')
+    print('updating ANALYZER')
     context  = a[0]
     readfunction = 0x03 # read holding registers
     writefunction = 0x10
@@ -53,34 +49,33 @@ def updating_writer(a):
     count = 50
     s = a[1]
     # import pdb; pdb.set_trace()
-    s.sendall(b'{"request":"read"}')
-    #data = s.recv(1500).decode('utf-8')
-    data = json.loads(s.recv(1500).decode())
-
-    print(data)
-
-    a_in_purge = int(data["outputs"]["A_in_purge"] * 65535)
-    b_in_purge = int(data["outputs"]["B_in_purge"] * 65535)
-    c_in_purge = int(data["outputs"]["C_in_purge"] * 65535)
+    s.send(b'{"request":"read"}')
+    try:
+        data = json.loads(s.recv(1500).decode())
+    except json.JSONDecodeError:
+        print("Received data is not in JSON format.")
+        return
+    a_in_purge = int(data["outputs"]["A_in_purge"]*65535)
+    b_in_purge = int(data["outputs"]["B_in_purge"]*65535)
+    c_in_purge = int(data["outputs"]["C_in_purge"]*65535)
     print(data)
 
     # import pdb; pdb.set_trace()
-    context[slave_id].setValues(4, 1, [a_in_purge, b_in_purge, c_in_purge])
+    context[slave_id].setValues(4, 1, [a_in_purge,b_in_purge,c_in_purge])
     values = context[slave_id].getValues(readfunction, 0, 2)
     log.debug("Values from datastore: " + str(values))
-
 
 def run_update_server():
     # ----------------------------------------------------------------------- #
     # initialize your data store
     # ----------------------------------------------------------------------- #
 
-
     store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0, range(1, 101)),
-        co=ModbusSequentialDataBlock(0, range(101, 201)),
-        hr=ModbusSequentialDataBlock(0, range(201, 301)),
-        ir=ModbusSequentialDataBlock(0, range(301, 401)))
+        di=ModbusSequentialDataBlock(0,range(1,101)),
+        co=ModbusSequentialDataBlock(0,range(101,201)),
+        hr=ModbusSequentialDataBlock(0,range(201,301)),
+        ir=ModbusSequentialDataBlock(0,range(301,401)))
+
     context = ModbusServerContext(slaves=store, single=True)
 
     # ----------------------------------------------------------------------- #
@@ -92,7 +87,7 @@ def run_update_server():
     identity.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity.ProductName = 'pymodbus Server'
     identity.ModelName = 'pymodbus Server'
-    identity.MajorMinorRevision = version.short() #'1.0'
+    identity.MajorMinorRevision = '1.0'
 
     # connect to simulation
     HOST = '127.0.0.1'
@@ -105,7 +100,7 @@ def run_update_server():
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=updating_writer, a=(context,sock))
     loop.start(time, now=False)  # initially delay by time
-    StartTcpServer(context, identity=identity, address=("192.168.95.15", 5020))
+    StartTcpServer(context, identity=identity, address=("192.168.95.15", 502))
 
 
 if __name__ == "__main__":
