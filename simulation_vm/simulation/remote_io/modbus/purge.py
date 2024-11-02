@@ -23,6 +23,7 @@ from pymodbus.server.asynchronous import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusServerContext, ModbusSlaveContext
+from pymodbus.version import version
 
 # --------------------------------------------------------------------------- #
 # import the twisted libraries we need
@@ -84,7 +85,7 @@ def run_update_server():
     identity.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity.ProductName = 'pymodbus Server'
     identity.ModelName = 'pymodbus Server'
-    identity.MajorMinorRevision = '1.0'
+    identity.MajorMinorRevision = version.short() #'1.0'
 
     # connect to simulation
     HOST = '127.0.0.1'
