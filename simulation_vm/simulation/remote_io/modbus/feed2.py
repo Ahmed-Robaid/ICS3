@@ -23,16 +23,11 @@ from pymodbus.server.asynchronous import StartTcpServer
 from pymodbus.device import ModbusDeviceIdentification
 from pymodbus.datastore import ModbusSequentialDataBlock
 from pymodbus.datastore import ModbusServerContext, ModbusSlaveContext
-from pymodbus.transaction import ModbusRtuFramer, ModbusAsciiFramer
-import random
-from pymodbus.version import version
 
 # --------------------------------------------------------------------------- #
 # import the twisted libraries we need
 # --------------------------------------------------------------------------- #
 from twisted.internet.task import LoopingCall
-
-
 # --------------------------------------------------------------------------- #
 # define your callback process
 # --------------------------------------------------------------------------- #
@@ -40,21 +35,20 @@ from twisted.internet.task import LoopingCall
 last_command = -1
 def updating_writer(a):
     global last_command
-    print('updating')
-    context  = a[0]
-
+    print('updating FEED 2')
+    context  = a[0]  
     slave_id = 0x01 # slave address
     count = 50
     s = a[1]
-
-
+    
     current_command = context[slave_id].getValues(16, 1, 1)[0] / 65535.0 *100.0
-
-    s.sendall(('{"request":"write","data":{"inputs":{"f2_valve_sp":' + repr(current_command) + '}}}\n').encode())
-
+    s.sendall(('{"request":"write","data":{"inputs":{"f2_valve_sp":'+repr(current_command)+'}}}\n').encode())
     # import pdb; pdb.set_trace()
-    #s.send('{"request":"read"}')
-    data = json.loads(s.recv(1500).decode())
+    try:
+        data = json.loads(s.recv(1500).decode())
+    except json.JSONDecodeError:
+        print("Received data is not in JSON format.")
+        return
     valve_pos = int(data["state"]["f2_valve_pos"]/100.0*65535)
     flow = int(data["outputs"]["f2_flow"]/500.0*65535)
     print(data)
@@ -70,19 +64,16 @@ def updating_writer(a):
     # import pdb; pdb.set_trace()
     context[slave_id].setValues(4, 1, [valve_pos,flow])
 
-
-
 def run_update_server():
     # ----------------------------------------------------------------------- #
     # initialize your data store
     # ----------------------------------------------------------------------- #
-
-
     store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0, range(1, 101)),
-        co=ModbusSequentialDataBlock(0, range(101, 201)),
-        hr=ModbusSequentialDataBlock(0, range(201, 301)),
-        ir=ModbusSequentialDataBlock(0, range(301, 401)))
+        di=ModbusSequentialDataBlock(0,range(1,101)),
+        co=ModbusSequentialDataBlock(0,range(101,201)),
+        hr=ModbusSequentialDataBlock(0,range(201,301)),
+        ir=ModbusSequentialDataBlock(0,range(301,401)))
+
     context = ModbusServerContext(slaves=store, single=True)
 
     # ----------------------------------------------------------------------- #
@@ -94,7 +85,7 @@ def run_update_server():
     identity.VendorUrl = 'http://github.com/bashwork/pymodbus/'
     identity.ProductName = 'pymodbus Server'
     identity.ModelName = 'pymodbus Server'
-    identity.MajorMinorRevision = version.short() #'1.0'
+    identity.MajorMinorRevision = '1.0'
 
     # connect to simulation
     HOST = '127.0.0.1'
@@ -107,7 +98,7 @@ def run_update_server():
     time = 1  # 5 seconds delay
     loop = LoopingCall(f=updating_writer, a=(context,sock))
     loop.start(time, now=False)  # initially delay by time
-    StartTcpServer(context, identity=identity, address=("192.168.95.11", 5020))
+    StartTcpServer(context, identity=identity, address=("192.168.95.11", 502))
 
 
 if __name__ == "__main__":
