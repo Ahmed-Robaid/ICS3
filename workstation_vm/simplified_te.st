@@ -456,7 +456,7 @@ CONFIGURATION Config0
 
   RESOURCE Res0 ON PLC
     VAR_GLOBAL
-      run_bit AT %QX100.0 : BOOL := 1;
+      run_bit AT %QX0.0 : BOOL := 1;
     END_VAR
     TASK MainTask(INTERVAL := T#50ms,PRIORITY := 0);
     PROGRAM instance0 WITH MainTask : main;
