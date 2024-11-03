@@ -5120,7 +5120,7 @@ scaled_real := UINT_TO_REAL(raw_input_value)*rate + offset;]]></xhtml:p>
             <pouInstance name="instance0" typeName="main"/>
           </task>
           <globalVars>
-            <variable name="run_bit" address="%QX100.0">
+            <variable name="run_bit" address="%QX0.0">
               <type>
                 <BOOL/>
               </type>
